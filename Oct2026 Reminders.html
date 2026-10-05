@@ -1,1 +1,1128 @@
-https://rena-ocm.github.io/setup-cleaning/Oct2026%20Reminders.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Setup Cleaning — October 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bl:#1a3a8f;--gn:#2d6a4f;--pk:#FF69B4;--pu:#7C3AED;--bg:#f0ede8;--br:#d0ccc4;--ink:#1a1a1a;--mu:#666;--rd:#c0392b;--tr:#e67e22}
+body{font-family:"Nunito Sans",sans-serif;background:var(--bg);color:var(--ink);font-size:14px;padding-bottom:80px}
+.hdr{background:var(--bl);padding:14px 18px;display:flex;align-items:center;gap:12px}
+.hdr img{height:38px}.ht{font-family:Nunito,sans-serif;font-weight:800;font-size:16px;color:#fff}
+.hs{font-size:11px;color:rgba(255,255,255,.7)}
+.tabs{display:flex;background:#122a6e}
+.tab{flex:1;padding:10px 4px;color:rgba(255,255,255,.6);cursor:pointer;font-family:Nunito,sans-serif;font-weight:700;font-size:11px;text-align:center;border-bottom:3px solid transparent}
+.tab.on{color:#fff;border-bottom-color:#fff}
+.pg{display:none}.pg.on{display:block}
+.dbar{background:#fff;padding:12px 16px;border-bottom:1px solid var(--br);position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.dlbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--mu);font-weight:700;margin-bottom:8px}
+.dscr{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+.dscr::-webkit-scrollbar{display:none}
+.dbtn{flex-shrink:0;padding:8px 12px;background:#f0f0f0;border-radius:10px;cursor:pointer;text-align:center;min-width:52px}
+.dbtn.on{background:var(--bl);color:#fff}
+.dn{font-family:Nunito,sans-serif;font-weight:800;font-size:18px;display:block;line-height:1}
+.dd{font-size:10px;opacity:.7;margin-top:2px;display:block}
+.wrap{padding:14px}
+.empty{text-align:center;padding:60px 20px;color:var(--mu);font-size:15px;line-height:2.4}
+.dtitle{font-family:Nunito,sans-serif;font-weight:800;font-size:18px;color:var(--bl);margin-bottom:10px}
+.tbar{background:#fff;border-radius:12px;padding:12px 16px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.tlbl{font-family:Nunito,sans-serif;font-weight:700;font-size:13px;margin-bottom:8px}
+.mbtns{display:flex;gap:6px;margin-top:6px}
+.mbtn{flex:1;padding:8px 4px;border:2px solid var(--br);border-radius:9px;background:#f5f5f5;font-family:Nunito,sans-serif;font-weight:700;font-size:12px;cursor:pointer;text-align:center;color:var(--mu);transition:all .2s}
+.mbtn.on{border-color:var(--bl);background:var(--bl);color:#fff}
+.mbtn.ont{border-color:var(--tr);background:var(--tr);color:#fff}
+.ibox{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:10px 14px;margin-bottom:12px;font-size:12px;color:#856404;line-height:1.6}
+.tcard{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.thdr{padding:12px 16px;color:#fff;font-family:Nunito,sans-serif;font-weight:800;font-size:13px;display:flex;justify-content:space-between;align-items:center}
+.thdr.pk{background:var(--pk)}.thdr.bl{background:#4DA6FF}.thdr.tr{background:var(--tr)}
+.thi{font-size:11px;font-weight:600;opacity:.9}
+.crow{padding:12px 14px;border-bottom:1px solid #f5f5f5;display:flex;align-items:center;gap:10px}
+.crow:last-child{border-bottom:none}.crow.sent{opacity:.35}
+.crow.drag-over{background:#eef3ff}.crow.dragging{opacity:.3}
+.dh{font-size:18px;color:#bbb;cursor:grab;flex-shrink:0;padding:0 2px;touch-action:none}
+.etab{color:#fff;border-radius:8px;padding:5px 9px;font-family:Nunito,sans-serif;font-weight:800;font-size:12px;flex-shrink:0;min-width:72px;text-align:center}
+.etab.am{background:var(--bl)}.etab.pm{background:var(--pu)}
+.ci{flex:1;min-width:0}.cn{font-weight:600;font-size:14px}
+.cd{font-size:10px;color:var(--mu);margin-top:1px}
+.cp{font-size:11px;color:var(--mu);margin-top:2px}.cp.no{color:var(--rd)}
+.smsa{background:var(--gn);color:#fff;border:none;border-radius:9px;padding:9px 12px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer;flex-shrink:0;text-decoration:none;display:inline-flex;align-items:center}
+.noph{background:#eee;color:#999;border:none;border-radius:9px;padding:9px 10px;font-size:11px;flex-shrink:0;cursor:pointer}
+.rmbtn{background:#fff0f0;color:var(--rd);border:1.5px solid #ffcccc;border-radius:8px;padding:8px 9px;font-size:13px;cursor:pointer;flex-shrink:0}
+.bbar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--br);padding:12px 16px;box-shadow:0 -4px 16px rgba(0,0,0,.1)}
+.nbtn{width:100%;padding:14px;background:var(--bl);color:#fff;border:none;border-radius:12px;font-family:Nunito,sans-serif;font-weight:800;font-size:15px;cursor:pointer}
+.nbtn.done{background:var(--gn)}.prg{font-size:11px;color:var(--mu);text-align:center;margin-top:5px}
+.wacard{background:#fff;border-radius:14px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+.wahdr{padding:12px 16px;color:#fff;font-family:Nunito,sans-serif;font-weight:800;font-size:13px}
+.wahdr.pk{background:var(--pk)}.wahdr.bl{background:#4DA6FF}.wahdr.tr{background:var(--tr)}
+.wabody{padding:16px}
+.wamsg{background:#f0f8f0;border:1px solid #c8e6c9;border-radius:10px;padding:14px;font-size:13px;line-height:1.7;white-space:pre-wrap;margin-bottom:10px}
+.wacopy{width:100%;padding:11px;background:#25D366;color:#fff;border:none;border-radius:9px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.wacopy.ok{background:var(--gn)}
+.scard{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:14px}
+.shdr{background:var(--bl);color:#fff;padding:12px 16px;font-family:Nunito,sans-serif;font-weight:800;font-size:14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.sbdy{display:none;padding:12px 16px}.sbdy.op{display:block}
+.smbtns{display:flex;gap:4px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #f0f0f0}
+.smbtn{flex:1;padding:6px 4px;border:2px solid var(--br);border-radius:8px;background:#f5f5f5;font-family:Nunito,sans-serif;font-weight:700;font-size:11px;cursor:pointer;text-align:center;color:var(--mu)}
+.smbtn.on{border-color:var(--bl);background:var(--bl);color:#fff}
+.smbtn.ont{border-color:var(--tr);background:var(--tr);color:#fff}
+.slbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin:10px 0 6px;padding:6px 10px;border-radius:6px;color:#fff}
+.slbl.pk{background:var(--pk)}.slbl.bl{background:#4DA6FF}.slbl.tr{background:var(--tr)}
+.srow{display:flex;align-items:center;gap:8px;margin-bottom:8px;background:#f8f8f8;border-radius:8px;padding:8px 10px}
+.srow.drag-over{background:#ddeeff}.srow.dragging{opacity:.3}
+.sdh{color:#bbb;font-size:16px;flex-shrink:0;cursor:grab;touch-action:none}
+.scn{flex:1;font-weight:600;font-size:13px}
+.sdur{width:62px;padding:6px 8px;border:1.5px solid var(--br);border-radius:6px;font-size:13px;outline:none;text-align:center}
+.sdur:focus{border-color:var(--tr)}
+.seta{width:76px;padding:6px 8px;background:#e8f4fd;border-radius:6px;font-size:12px;font-family:Nunito,sans-serif;font-weight:700;color:var(--bl);text-align:center}
+.srm{background:none;border:none;color:var(--rd);font-size:16px;cursor:pointer;padding:2px 4px}
+.sadd{display:flex;gap:8px;margin-top:8px}
+.saname{flex:1;padding:7px 10px;border:1.5px dashed var(--br);border-radius:7px;font-size:13px;outline:none}
+.sadur{width:65px;padding:7px 8px;border:1.5px dashed var(--br);border-radius:7px;font-size:13px;text-align:center;outline:none}
+.saddbtn{background:var(--gn);color:#fff;border:none;border-radius:7px;padding:7px 12px;font-weight:700;font-size:13px;cursor:pointer}
+.recalc{width:100%;margin-top:10px;padding:10px;background:var(--bl);color:#fff;border:none;border-radius:8px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.ccard{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin-bottom:14px}
+.ctitle{font-family:Nunito,sans-serif;font-weight:800;font-size:15px;color:var(--bl);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
+.addbtn{background:var(--gn);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-family:Nunito,sans-serif;font-weight:700;font-size:12px;cursor:pointer}
+.conrow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f5}
+.conrow:last-child{border-bottom:none}
+.coname{flex:1;font-weight:600;font-size:14px}.coph{font-size:12px;color:var(--mu)}.coph.no{color:var(--rd)}
+.ebtn{background:var(--bl);color:#fff;border:none;border-radius:7px;padding:6px 11px;font-size:12px;font-weight:700;cursor:pointer}
+.dbtn2{background:var(--rd);color:#fff;border:none;border-radius:7px;padding:6px 9px;font-size:12px;font-weight:700;cursor:pointer}
+.mo{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:200;display:none;align-items:center;justify-content:center;padding:16px}
+.mo.on{display:flex}
+.md{background:#fff;border-radius:14px;padding:24px;width:100%;max-width:400px}
+.mdtitle{font-family:Nunito,sans-serif;font-weight:800;font-size:16px;color:var(--bl);margin-bottom:16px}
+.md label{font-size:11px;color:var(--mu);font-weight:700;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:4px;margin-top:12px}
+.md input{width:100%;padding:10px;border:1.5px solid var(--br);border-radius:8px;font-size:14px;outline:none}
+.md input:focus{border-color:var(--bl)}
+.mdbtns{display:flex;gap:8px;margin-top:18px}
+.mdbtns button{flex:1;padding:12px;border:none;border-radius:9px;font-family:Nunito,sans-serif;font-weight:700;font-size:14px;cursor:pointer}
+.mdsave{background:var(--gn);color:#fff}.mdcan{background:#f0f0f0;color:var(--mu)}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1a3a8f;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:300;display:none;white-space:nowrap}
+.toast.on{display:block}
+
+.etab.tbd{background:var(--tr)}
+.md select{width:100%;padding:10px;border:1.5px solid var(--br);border-radius:8px;font-size:14px;outline:none;background:#fff;font-family:"Nunito Sans",sans-serif}
+.md select:focus{border-color:var(--bl)}
+.pcard{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,.08);border-left:4px solid var(--gn)}
+.pname{font-family:Nunito,sans-serif;font-weight:800;font-size:14px;color:var(--bl);margin-bottom:4px}
+.pnote{font-size:12px;color:var(--mu);line-height:1.6;margin-bottom:10px}
+.pbtn{background:var(--gn);color:#fff;border:none;border-radius:9px;padding:9px 14px;font-family:Nunito,sans-serif;font-weight:700;font-size:12px;cursor:pointer}
+.cfmcard{background:#fff8e6;border:1px solid #ffe4a3;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.cfmname{font-family:Nunito,sans-serif;font-weight:800;font-size:13px;color:#8a5a00;margin-bottom:4px}
+.cfmnote{font-size:12px;color:#6b5000;line-height:1.6;margin-bottom:10px}
+.cfmbtn{background:none;border:1.5px solid #d4a017;color:#8a5a00;border-radius:8px;padding:7px 12px;font-family:Nunito,sans-serif;font-weight:700;font-size:11px;cursor:pointer}
+.sectlbl{font-family:Nunito,sans-serif;font-weight:800;font-size:13px;color:var(--bl);margin:4px 0 10px;text-transform:uppercase;letter-spacing:.5px}
+.crow.dragging{opacity:.35}
+.crow{touch-action:pan-y}
+.srow{touch-action:pan-y}
+.emptysm{text-align:center;padding:24px 10px;color:var(--mu);font-size:13px}
+.toast.err{background:var(--rd)}
+
+
+/* ---- wider tab bar (7 tabs) ---- */
+.tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;min-width:76px;padding:10px 8px}
+.tname{font:inherit;color:inherit;background:transparent;border:none;border-bottom:1px dashed currentColor;width:65%;outline:none}
+
+/* ---- employees tab ---- */
+.emprow{background:#fff;border-radius:12px;padding:14px 16px;margin-bottom:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.emprow.gas{align-items:center;justify-content:space-between;flex-wrap:nowrap}
+.emprow.gas label{font-size:12px;color:var(--mu);font-weight:600}
+.emprow.gas input{width:80px;padding:8px;border:1.5px solid var(--br);border-radius:8px;font-size:14px;text-align:right}
+.empname{font-family:Nunito,sans-serif;font-weight:800;font-size:14px;color:var(--bl);width:100%}
+.empr{font-size:11px;color:var(--mu);background:var(--bg);border-radius:6px;padding:3px 8px}
+.emprow .ebtn,.emprow .dbtn2{margin-left:auto}
+
+/* ---- purchase orders tab ---- */
+.pobar{background:#fff;padding:10px 16px;border-bottom:1px solid var(--br);display:flex;gap:8px;align-items:center;position:sticky;top:0;z-index:40}
+.pobar label{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--mu);font-weight:700}
+.pobar select{flex:1;padding:8px 6px;border:1.5px solid var(--br);border-radius:8px;font-size:12px;background:#fff}
+.pocard{background:#fff;border-radius:12px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.08);overflow:hidden}
+.pohdr{background:var(--bl);color:#fff;padding:10px 14px;font-family:Nunito,sans-serif;font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.pototal{font-family:Nunito,sans-serif;font-weight:800}
+.porow{display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:1px solid var(--bg)}
+.pod{font-size:11px;color:var(--mu);width:64px;flex-shrink:0}
+.pohrs{width:52px;padding:6px;border:1.5px solid var(--br);border-radius:7px;font-size:12px;text-align:center}
+.porole{flex:1;padding:6px 4px;border:1.5px solid var(--br);border-radius:7px;font-size:11px;background:#fff;min-width:0}
+.popay{font-family:Nunito,sans-serif;font-weight:800;font-size:12px;color:var(--gn);width:56px;text-align:right;flex-shrink:0}
+.popay.zero{color:var(--rd)}
+.pocopy{width:100%;background:var(--gn);color:#fff;border:none;padding:11px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer}
+.addadhoc{width:100%;background:none;border:1.5px dashed var(--br);color:var(--mu);border-radius:10px;padding:12px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer;margin-bottom:20px}
+.pomargin{color:#8a5a00;background:#fff8e6;border:1px solid #ffe4a3;border-radius:10px;padding:10px 12px;font-size:11px;line-height:1.6;margin-bottom:12px}
+
+</style>
+</head>
+<body>
+<div class="hdr"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCABMAEwDASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAUGAwQIAQf/xAAzEAABAwMDAwIDBgcBAAAAAAABAgMEAAURBhIhBzFBEyIyUWEVUnGBkaEIFCMkQkPR8P/EABkBAQEBAAMAAAAAAAAAAAAAAAADBAECBf/EACkRAAICAQIEBAcAAAAAAAAAAAABAgMREjEEIUFxBSKRwTJRYYGx0fD/2gAMAwEAAhEDEQA/AOqaUpQClKUApSlAKUpQClKUApSvCoDGSBntmgPaipF5S25LbbjPOORxnAKRu+HOMnj4h374OM4rM+tUmPOakNvRmk5SHUrAKk4yVJxyKgpJlzorSVhCW07VoQtsqVx23KPc/lwfnVa69RG26NWNTLYk5SDgjPg0qARcZrbSW2obKUpAQnLqlbQPJ9vNayVzG5Eh9CGUPPgBb3u4A44QcjP54+nfPKpkdHxlK6ktGuyZU9LEdh1TOF5fI2pykgEDPJ5PepKqTFmux5NwMd1W+Ljf6qEqCtyd+BjkA5HAA5NW1mV6kkslh9Cg2lZUpHs58A+SK4sr07Hem6NvwmzSlKkWI/ULk5mw3Fy0NpcuSI7ioyFdlOhJ2g/niuHIrke53ySnqFdLxHuK1cyXApzarzuT3Az90EAeK7N6jy9QQ9ITndIRm5F5wAyHOQgZ9ysf5EDOB865n1Zd9ZamiOwr1om2qnLG3+cRHUhaT9749ufrXr+GZSk8LvlZXqYuMa5Jv8+xD6p1DedKQG9L2vVj02yzEImKlxny4r01ZT6aVZylPtJKRg5745BzaG0latY3tNtsmq7iJ5aU8EvocbBAxuwrJ55rI50b1VbtPwb2xCQ9KS6VORFJ3EJ4IJB4IPI/8KtXTO46nga5tBXoe2wmXnhHfksx3EqQ2rhSgd5H17Gttk4qtuppvnnbft+jMlqklPOO7/vUo2pdCS7H1MtWkVXaQ45NLA9YOqwkuKUkefGK2n7BcdFdYrRYxfFodC2sS3VKcbb9VKuSgkAgZ7Hg19H6h2C7Sv4j9P3JiA+5AachFT6U+1IStRV+ma2+vWhr6vVtu1lpZBclxQ0VJAyUrbVlKsdiPHP1qMeI1uEJNeaL+W5WVUYptLOH9dj4Tfp12Y0jHhSpLi1QrlJQJiHlf3e32JX8XZIb2jgYFbOibWjVOobhFumphaQhBfS/LmFtLhK8FOVHvzn9as/2NrvqEm0afnWtESBEkOu+qGigJLqypalHJz8RwBis2juk8m59S51qvECWmzI9ZKZW3byggIV3HfH71Wtxpq02SWpc+j6k5LVPMFyf2JHpJqu66a6sRtLxL05fLFKeMdX9b1m0naSHG1c4wQM44IJ8iurh2qi6D6X6d0ZKVLtscrmlJT67nJSPOPlV6rx+MthbZqrXtk30QlCGJCmBnOOaUrIWNO5QVTA3slSI5RuwWlYzkY5/Co9dgWveTeLqncoq9jwAGV7uOO3j8OKnKUBDx7GpmR6v2pcnAd+W3Hsp9wx8vHcfWs6LXtIJmzCef9mPl/z96kaUBH/ZpC8iXJH039+Qef0x+FSFKUApSlAKUpQClKUApSlAKUpQClKUB//Z" alt="Setup"><div><div class="ht">Setup Cleaning Services</div><div class="hs">October 2026 — Schedule &amp; Reminders</div></div><button onclick="resetAll()" style="background:rgba(255,255,255,.2);border:none;border-radius:8px;padding:6px 10px;color:#fff;font-size:11px;cursor:pointer;flex-shrink:0;margin-left:auto">&#128260; Reset</button></div>
+<div class="tabs">
+  <div class="tab on" data-tab="rem" onclick="gTab('rem')">&#128197; Reminders</div>
+  <div class="tab" data-tab="wa" onclick="gTab('wa')">&#128172; WhatsApp</div>
+  <div class="tab" data-tab="sch" onclick="gTab('sch')">&#9999;&#65039; Schedule</div>
+  <div class="tab" data-tab="pen" onclick="gTab('pen')">&#128994; Pending</div>
+  <div class="tab" data-tab="con" onclick="gTab('con')">&#128222; Contacts</div>
+  <div class="tab" data-tab="emp" onclick="gTab('emp')">&#128176; Rates</div>
+  <div class="tab" data-tab="po" onclick="gTab('po')">&#129534; POs</div>
+</div>
+<div class="dbar" id="dbar">
+  <div class="dlbl" id="dlbl">Select date</div>
+  <div class="dscr" id="dscr"></div>
+</div>
+<div class="pg on" id="pg-rem"><div class="wrap" id="rem-wrap"><div class="empty">&#128197;<br>Select a date above</div></div></div>
+<div class="pg" id="pg-wa"><div class="wrap" id="wa-wrap"><div class="empty">&#128172;<br>Select a date first</div></div></div>
+<div class="pg" id="pg-sch"><div class="wrap" id="sch-wrap"></div></div>
+<div class="pg" id="pg-pen"><div class="wrap"></div></div>
+<div class="pg" id="pg-con"><div class="wrap"><div class="ccard"><div class="ctitle">&#128222; Contacts <button class="addbtn" onclick="openMod(-1)">+ Add</button></div><div id="con-list"></div></div></div></div>
+<div class="pg" id="pg-emp"><div class="wrap" id="emp-wrap"></div></div>
+<div class="pg" id="pg-po">
+  <div class="pobar">
+    <label>De</label><select id="po-start" onchange="changePeriodStart(this.value)"></select>
+    <label>at&eacute;</label><select id="po-end" onchange="changePeriodEnd(this.value)"></select>
+  </div>
+  <div class="wrap" id="po-wrap"></div>
+</div>
+<div class="bbar" id="bbar" style="display:none">
+  <button class="nbtn" id="nbtn" onclick="nextSMS()">Send Next SMS</button>
+  <div class="prg" id="prg"></div>
+</div>
+<div class="mo" id="cfm-mo"><div class="md">
+  <div class="mdtitle">Confirmar</div>
+  <p id="cfm-msg" style="color:#444;font-size:14px;margin-bottom:4px;"></p>
+  <div class="mdbtns"><button class="mdcan" onclick="cfmNo()">Cancelar</button><button class="mdsave" style="background:var(--rd)" onclick="cfmYes()">Sim, remover</button></div>
+</div></div>
+<div class="mo" id="modal"><div class="md">
+  <div class="mdtitle" id="mdtitle">Add Contact</div>
+  <label>Name</label><input id="mname" placeholder="Client name">
+  <label>Phone</label><input id="mphone" type="tel" placeholder="0400 000 000">
+  <div class="mdbtns"><button class="mdcan" onclick="closeMod()">Cancel</button><button class="mdsave" onclick="saveCon()">Save</button></div>
+</div></div>
+<div class="mo" id="sched-mo"><div class="md">
+  <div class="mdtitle" id="sched-title">Agendar</div>
+  <label>Dia</label><select id="sched-date"></select>
+  <label>Equipe</label><select id="sched-team"></select>
+  <label>Dura&ccedil;&atilde;o (horas)</label><input id="sched-dur" type="number" step="0.25" min="0" value="1.5">
+  <div class="mdbtns"><button class="mdcan" onclick="closeSchedMod()">Cancel</button><button class="mdsave" onclick="saveSchedulePick()">Agendar</button></div>
+</div></div>
+<div class="mo" id="emp-mo"><div class="md">
+  <div class="mdtitle" id="emtitle">Novo Funcion&aacute;rio</div>
+  <label>Nome</label><input id="emname" placeholder="Nome do funcion&aacute;rio">
+  <label>Cleaner ($/h)</label><input id="emcleaner" type="number" step="0.5" min="0" value="0">
+  <label>Driver — carro da empresa ($/h)</label><input id="emdco" type="number" step="0.5" min="0" value="0">
+  <label>Driver — carro pr&oacute;prio ($/h, + gasolina)</label><input id="emdown" type="number" step="0.5" min="0" value="0">
+  <div class="mdbtns"><button class="mdcan" onclick="closeEmpMod()">Cancel</button><button class="mdsave" onclick="saveEmp()">Save</button></div>
+</div></div>
+<div class="mo" id="adhoc-mo"><div class="md">
+  <div class="mdtitle">Ajuste manual (PO)</div>
+  <label>Nome do funcion&aacute;rio</label><input id="adname" placeholder="Nome">
+  <label>Dia do m&ecirc;s (ex: 05)</label><input id="addate" placeholder="05">
+  <label>Horas</label><input id="adhrs" type="number" step="0.25" min="0" value="1">
+  <label>Fun&ccedil;&atilde;o</label>
+  <select id="adrole"><option value="cleaner">Cleaner</option><option value="driverCo">Driver (company car)</option><option value="driverOwn">Driver (own car)</option></select>
+  <label>Nota (opcional)</label><input id="adnote" placeholder="ex: cobriu turno de X">
+  <div class="mdbtns"><button class="mdcan" onclick="closeAdhocMod()">Cancel</button><button class="mdsave" onclick="saveAdhoc()">Add</button></div>
+</div></div>
+<div class="toast" id="toast"></div>
+<script>
+var MM="10",MONTH_NAME="October",MONTH_ID="oct2026";
+var DEFAULT_SS=[{"date": "01", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 1, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "10:40 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Flavia", "dur": 1.3333, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "02", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 1, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "TBD"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "06", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "t2": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}]}, {"date": "07", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Paulo / Karol", "team2_name": "? / Camila", "t1": [{"name": "Theresa", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Piet", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "11:05 AM"}]}, {"date": "08", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Melanie Dobss", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": ""}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}]}, {"date": "09", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 2, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Rafaa", "dur": 1.0, "fill": "none", "eta_ampm": ""}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "t2": []}, {"date": "10", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 2, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "12", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "? / Camila", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Richard", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Kelsey", "dur": 1.5, "fill": "none", "eta_ampm": "??? CHECAR SMS"}, {"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": ""}]}, {"date": "13", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Geoff", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}]}, {"date": "14", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Augusto / Karol", "team2_name": "? / Camila", "t1": [{"name": "Margaret", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}]}, {"date": "15", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "16", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 3, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "17", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 3, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "19", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Lynda Hurst", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Sandy Shane", "dur": 2.25, "fill": "none", "eta_ampm": "9:50 AM"}], "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Boland", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Tnb", "dur": 1.75, "fill": "none", "eta_ampm": ""}]}, {"date": "20", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "t2": [{"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}]}, {"date": "21", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Piet", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Jude", "dur": 2.5, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "11:05 AM"}]}, {"date": "22", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Jacqui Jervis", "dur": 2.0, "fill": "none", "eta_ampm": ""}]}, {"date": "23", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 4, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "t2": []}, {"date": "24", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 4, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "26", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Sue", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": "9:35 AM"}]}, {"date": "27", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Samuel Roborgh", "dur": 1.5, "fill": "none", "eta_ampm": ""}]}, {"date": "28", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Rebecca", "dur": 1.75, "fill": "none", "eta_ampm": "12:55 PM"}, {"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}]}, {"date": "29", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "30", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 5, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "31", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 5, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}];
+var DEFAULT_SC=[{"name": "Customer", "phone": "Phone Number"}, {"name": "Amanda Tnetennba", "phone": "0478 614 530"}, {"name": "Amanda Boland (F)", "phone": "0434 595 590"}, {"name": "Angela Allen (F)", "phone": "0414 060 251"}, {"name": "Ane Sheehan", "phone": "0416 899 521"}, {"name": "Anna Laffey", "phone": "0438 605 126"}, {"name": "Annissa O'Shea", "phone": "0421 505 166"}, {"name": "Amy Bowater", "phone": "0429 471 601"}, {"name": "Anthony Black Family", "phone": "07 3236 2536"}, {"name": "Barbara Davidson", "phone": "0407 574 649"}, {"name": "Bess Howard", "phone": "0409 759 539"}, {"name": "Bridget Bradley", "phone": "0439 661 804"}, {"name": "Calliope Ainsworth", "phone": "0415 970 223"}, {"name": "Cate Gerber", "phone": "0402 785 298"}, {"name": "Chiara Santomauro", "phone": "0403 714 886"}, {"name": "Charity Corrigan", "phone": "0423 847 161"}, {"name": "Cameron Scott (W)", "phone": "0413 692 375"}, {"name": "Dee Hyde", "phone": "0492 903 758"}, {"name": "Eva Turek", "phone": "0406 589 748"}, {"name": "Eltanin Elysion Koffee Light", "phone": "0458 675 728"}, {"name": "Flavia", "phone": "0421 219 469"}, {"name": "Gab Edmonds", "phone": "0481 905 998"}, {"name": "Geoff", "phone": "0413 954 047"}, {"name": "Heidi Thompson", "phone": "0413 082 427"}, {"name": "Jess Ash", "phone": "0451 180 332"}, {"name": "Josie Montano", "phone": "0417 771 643"}, {"name": "Jacquelyn Jervis", "phone": "0428 552 259"}, {"name": "Jude (M)", "phone": "0403 058 132"}, {"name": "Kat Harrison", "phone": "0403 011 179"}, {"name": "Kathryn McKeon", "phone": "0410 301 729"}, {"name": "Kate Hadden", "phone": "0414 055 559"}, {"name": "Kathy Benson", "phone": "0438 663 857"}, {"name": "Kelsey Erdelyi", "phone": "0450 044 030"}, {"name": "Kelly Jean", "phone": "0400 055 441"}, {"name": "Kirstie Barker", "phone": "0416 845 691"}, {"name": "Kim Price", "phone": "0467 965 492"}, {"name": "Laura Field", "phone": "0466 433 670"}, {"name": "Laura Wilson Gooch", "phone": "0439 775 466"}, {"name": "Lynda Hurst", "phone": "0434 373 811"}, {"name": "Liz McGowan", "phone": "0400 124 871"}, {"name": "Linda Nettle", "phone": "0434 843 417"}, {"name": "Louise Hole (F)", "phone": "0418 791 609"}, {"name": "My Schofiel", "phone": "0402 701 362"}, {"name": "Maddie Porter", "phone": "0488 481 721"}, {"name": "Margaret (F)", "phone": "0402 344 796"}, {"name": "Maddie Moloney", "phone": "0426 250 673"}, {"name": "Margie Ireland", "phone": "0418 734 425"}, {"name": "Marianne Garden (F)", "phone": "0490 075 616"}, {"name": "Maegan Zangari", "phone": "0401 484 033"}, {"name": "Mark Bisaro", "phone": "0431 344 134"}, {"name": "Melissa Whitehead", "phone": "0411 486 720"}, {"name": "Melanie Dobbs", "phone": "0431 842 946"}, {"name": "Monique Anne Prior", "phone": "0408 241 043"}, {"name": "Neva Woolmer", "phone": "0403 662 704"}, {"name": "Nichole McHardy", "phone": "0428 961 550"}, {"name": "Olivia Law", "phone": "0431 733 390"}, {"name": "Pam", "phone": "0400 290 117"}, {"name": "Rebecca Leanne Michael", "phone": "0418 201 179"}, {"name": "Rita Mesch", "phone": "0422 316 615"}, {"name": "Rebecca Wilde", "phone": "0402 046 368"}, {"name": "Richard Ralph", "phone": "0409 600 598"}, {"name": "Samuel Roborgh", "phone": "0426 260 491"}, {"name": "Sandy Shane Hunter", "phone": "0409 031 246"}, {"name": "Shirley", "phone": "0423 642 251"}, {"name": "Steph", "phone": "0413 505 558"}, {"name": "Sue Patterson", "phone": "0417 774 829"}, {"name": "Tanya McKee", "phone": "0401 619 149"}, {"name": "Tina Taneja", "phone": "0458 041 646"}, {"name": "Theresa Spencer", "phone": "0407 161 942"}, {"name": "Trudy", "phone": "0418 212 909"}, {"name": "Vanessa Petch", "phone": "0418 190 106"}, {"name": "Amanda Tnb", "phone": "0478 614 530"}, {"name": "Megan Auld", "phone": "0414 902 966"}, {"name": "Jacqui Jervis", "phone": "0428 552 259"}, {"name": "Rebecca M", "phone": "0418 201 179"}, {"name": "Amanda Boland", "phone": "0434 595 590"}, {"name": "Laura Wilson", "phone": "0439 775 466"}, {"name": "Rebecca", "phone": "0418 201 179"}, {"name": "Tara", "phone": ""}, {"name": "Katherine Cooke", "phone": ""}, {"name": "William Taylor", "phone": ""}, {"name": "Liz Walsh", "phone": ""}, {"name": "Melanie Dobss", "phone": "0431 842 946"}, {"name": "Piet", "phone": ""}, {"name": "Dale", "phone": ""}, {"name": "Kevin Nicholson", "phone": ""}, {"name": "Liz Salon", "phone": ""}, {"name": "Rafaa", "phone": ""}];
+var DEFAULT_PENDING=[];
+var DEFAULT_CONFIRM=[{"name": "Equipe sem nome (3 dias)", "note": "Qua 07.10, Seg 12.10 e Qua 14.10: o Team 2 está como \"/ Camila\" (falta o nome da outra pessoa). Aparece como \"? / Camila\" — corrija na aba Schedule (toque no nome da equipe) para o PO sair certo."}, {"name": "Segunda 05.10 — HOLIDAY", "note": "Marcado como feriado no seu schedule, então não criei esse dia no app."}, {"name": "Liz Salon — terça 06.10", "note": "No seu schedule ela aparece na terça 06.10 (Aymara, 8:00) e também todo sábado. Como a Aymara já está no Team 1 na terça no mesmo horário, deixei só os sábados — confirme se a terça era para ficar."}, {"name": "Kelsey — segunda 12.10 (Team 2)", "note": "ETA \"??? CHECAR SMS\". Além disso, o total do Team 2 nesse dia no seu schedule diz 5h30, mas com a Kelsey a soma dá 7h — conferir se a Kelsey entra mesmo."}, {"name": "Nomes ajustados", "note": "\"Carol\" (trio de sexta) = Karol e \"Matheus\" = Mateus, para bater com os cadastros de Rates. Funcionários novos: Ilka (terças/segundas) e Augusto (quarta 14.10) — sem taxa cadastrada ainda (aba Rates)."}, {"name": "Liz Walsh / Angela / Jude", "note": "Seguem com \"confirmar total time\" — o SMS usa \"the scheduled time\" até ter horário real."}, {"name": "Clientes sem telefone", "note": "Novos sem número na aba Contacts: Dale, Kevin Nicholson, Liz Salon, Rafaa (e os que já estavam sem: Katherine Cooke, Liz Walsh, Piet, William Taylor)."}];
+var DEFAULT_EMP=[{"name": "Aymara", "cleaner": 0, "driverCo": 33, "driverOwn": 35}, {"name": "Paulo", "cleaner": 0, "driverCo": 32, "driverOwn": 0}, {"name": "Karol", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Camila", "cleaner": 32, "driverCo": 0, "driverOwn": 0}, {"name": "Mateus", "cleaner": 0, "driverCo": 32, "driverOwn": 35}, {"name": "Mariah", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Ilka", "cleaner": 0, "driverCo": 0, "driverOwn": 0}, {"name": "Augusto", "cleaner": 0, "driverCo": 0, "driverOwn": 0}];
+var DEFAULT_GAS_FLAT=10;
+var SS=[],SC=[],SENT={},PENDING=[],CONFIRM=[];
+/* ============ Setup Cleaning Services — App ============ */
+var TAB = 'rem';
+var DATE_KEY = null;
+var CONFIRM_CB = null;
+var EDIT_CONTACT_IDX = -1;
+var EDIT_EMP_IDX = -1;
+var SAVE_TIMER = null;
+var ART = null;
+var EMP=[], GAS_FLAT=10, POOVR={}, POADHOC=[], PERIOD={start:'',end:''};
+
+function dayKey(d){ return d.month + d.date; }
+function findDay(key){ return SS.find(function(d){ return dayKey(d) === key; }); }
+function pad2(n){ return (n<10?'0':'')+n; }
+
+function normName(s){
+  return String(s||'').toLowerCase().replace(/\(.*?\)/g,'').replace(/\+.*/,'').replace(/see sms requests/gi,'').trim();
+}
+function cleanPhone(ph){
+  return String(ph||'').replace(/[^\d+]/g,'');
+}
+function phoneFor(name){
+  var n = normName(name);
+  if(!n) return '';
+  for(var i=0;i<SC.length;i++){
+    var cn = normName(SC[i].name);
+    if(cn===n) return SC[i].phone||'';
+  }
+  for(var i=0;i<SC.length;i++){
+    var cn = normName(SC[i].name);
+    if(cn && (n.indexOf(cn)>-1 || cn.indexOf(n)>-1)) return SC[i].phone||'';
+  }
+  return '';
+}
+function contactIdxFor(name){
+  var n = normName(name);
+  for(var i=0;i<SC.length;i++){ if(normName(SC[i].name)===n) return i; }
+  return -1;
+}
+
+function isIOS(){
+  return /iP(hone|od|ad)/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+function smsHref(phone, msg){
+  var p = cleanPhone(phone);
+  var sep = isIOS() ? '&' : '?';
+  return 'sms:'+p+sep+'body='+encodeURIComponent(msg);
+}
+function copyToClipboard(text, cb){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ if(cb) cb(); }, function(){ fallbackCopy(text, cb); });
+  } else {
+    fallbackCopy(text, cb);
+  }
+}
+
+function etaClass(eta){
+  if(!eta) return 'tbd';
+  if(/AM/.test(eta)) return 'am';
+  if(/PM/.test(eta)) return 'pm';
+  return 'tbd';
+}
+function etaShort(eta){
+  if(!eta) return 'TBD';
+  return eta;
+}
+
+function decToClock(decHour){
+  var totalMin = Math.round(decHour*60);
+  var h = Math.floor(totalMin/60);
+  var m = totalMin%60;
+  var ap = h<12?'AM':'PM';
+  var h12 = h%12; if(h12===0) h12=12;
+  return h12+':'+pad2(m)+' '+ap;
+}
+function recalcTeam(list){
+  var cur = 8.0; // 8:00 AM start
+  for(var i=0;i<list.length;i++){
+    list[i].eta_ampm = decToClock(cur);
+    cur += (parseFloat(list[i].dur)||0);
+  }
+}
+
+function fmtDur(h){
+  var hh = Math.floor(h);
+  var mm = Math.round((h-hh)*60);
+  if(hh===0) return mm+'min';
+  if(mm===0) return hh+'h';
+  return hh+'h'+pad2(mm)+'min';
+}
+
+function teamColorClass(idx){ return idx===0?'pk':(idx===1?'bl':'tr'); }
+
+/* ---------- persistence ----------
+   State lives in a separate JSON file (data/state.json) inside the artifact's
+   own file store, published via the files-form of artifact.publish. index.html
+   itself never changes after the first publish — only that data file does. */
+var LS_KEY = 'scs_'+MONTH_ID+'_state_v1';
+function stateSnapshot(){
+  return {SS:SS, SC:SC, SENT:SENT, PENDING:PENDING, CONFIRM:CONFIRM,
+          EMP:EMP, GAS_FLAT:GAS_FLAT, POOVR:POOVR, POADHOC:POADHOC, PERIOD:PERIOD};
+}
+function saveLocal(){
+  try{
+    localStorage.setItem(LS_KEY, JSON.stringify(stateSnapshot()));
+    return true;
+  }catch(e){ return false; }
+}
+function loadLocal(){
+  try{
+    var raw = localStorage.getItem(LS_KEY);
+    if(!raw) return null;
+    var j = JSON.parse(raw);
+    return (j && j.SS) ? j : null;
+  }catch(e){ return null; }
+}
+/* scheduleSave() is called after every edit. The on-device save (localStorage)
+   always happens IMMEDIATELY and synchronously, in the same tick as the edit —
+   never delayed — because a delayed save can be lost if the page is closed or
+   backgrounded a moment later (e.g. right after deleting a client). Only the
+   optional cloud sync (ART.publish, for viewers where claude.ai granted write
+   access) is debounced, since that one is a network call and just a bonus. */
+function scheduleSave(){
+  var localOk = saveLocal();
+  if(!localOk) showToast('Não foi possível salvar neste dispositivo.', true);
+  if(SAVE_TIMER) clearTimeout(SAVE_TIMER);
+  SAVE_TIMER = setTimeout(syncRemote, 400);
+}
+async function syncRemote(){
+  if(!ART) return;
+  try{
+    await ART.publish({'data/state.json': JSON.stringify(stateSnapshot())});
+  }catch(e){
+    /* conflict / not_writer / not_granted / capability_disabled and similar:
+       the on-device save from scheduleSave() already covers this device, so
+       stay quiet — this is just the optional cross-device sync failing. */
+  }
+}
+async function loadState(){
+  var fromServer = null;
+  try{
+    var res = await fetch('data/state.json', {cache:'no-store'});
+    if(res.ok){
+      var j = await res.json();
+      if(j && j.SS) fromServer = j;
+    }
+  }catch(e){ /* not reachable from this view (e.g. standalone/home-screen) */ }
+  var fromLocal = loadLocal();
+  var chosen = fromServer || fromLocal;
+  if(chosen){
+    SS = chosen.SS; SC = chosen.SC || []; SENT = chosen.SENT || {}; PENDING = chosen.PENDING || []; CONFIRM = chosen.CONFIRM || [];
+    EMP = chosen.EMP || DEFAULT_EMP;
+    GAS_FLAT = (chosen.GAS_FLAT!=null) ? chosen.GAS_FLAT : DEFAULT_GAS_FLAT;
+    POOVR = chosen.POOVR || {};
+    POADHOC = chosen.POADHOC || [];
+    PERIOD = chosen.PERIOD || defaultPeriod();
+    return;
+  }
+  SS = DEFAULT_SS; SC = DEFAULT_SC; SENT = {}; PENDING = DEFAULT_PENDING; CONFIRM = DEFAULT_CONFIRM;
+  EMP = DEFAULT_EMP; GAS_FLAT = DEFAULT_GAS_FLAT; POOVR = {}; POADHOC = [];
+  PERIOD = defaultPeriod();
+}
+function defaultPeriod(){
+  var days = SS.map(function(d){return d;}).sort(function(a,b){ return parseInt(a.date)-parseInt(b.date); });
+  if(!days.length) return {start:'', end:''};
+  var startNum = parseInt(days[0].date);
+  var endTarget = startNum + 13; // 14 calendar days = a standard quinzena
+  var candidates = days.filter(function(d){ return parseInt(d.date) <= endTarget; });
+  var end = candidates.length ? candidates[candidates.length-1] : days[days.length-1];
+  return {start: days[0].date, end: end.date};
+}
+
+/* ---------- toast ---------- */
+var TOAST_TIMER = null;
+function showToast(msg, isErr){
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast on' + (isErr?' err':'');
+  if(TOAST_TIMER) clearTimeout(TOAST_TIMER);
+  TOAST_TIMER = setTimeout(function(){ t.className='toast'; }, 2400);
+}
+
+/* ---------- tabs ---------- */
+function gTab(name){
+  TAB = name;
+  document.querySelectorAll('.tab').forEach(function(el){ el.classList.toggle('on', el.dataset.tab===name); });
+  document.querySelectorAll('.pg').forEach(function(el){ el.classList.toggle('on', el.id==='pg-'+name); });
+  document.getElementById('bbar').style.display = (name==='rem') ? 'flex' : 'none';
+  if(name==='rem') renderReminders();
+  if(name==='wa') renderWhatsapp();
+  if(name==='sch') renderSchedule();
+  if(name==='con') renderContacts();
+  if(name==='pen') renderPending();
+  if(name==='emp') renderEmployees();
+  if(name==='po') renderPOs();
+  document.getElementById('dbar').style.display = (name==='rem'||name==='wa'||name==='sch') ? '' : 'none';
+}
+
+/* ---------- date bar ---------- */
+function renderDateBar(){
+  var scr = document.getElementById('dscr');
+  scr.innerHTML = '';
+  SS.forEach(function(d){
+    var key = dayKey(d);
+    var btn = document.createElement('div');
+    btn.className = 'dbtn' + (key===DATE_KEY?' on':'');
+    btn.onclick = function(){ selectDate(key); };
+    btn.innerHTML = '<span class="dn">'+d.date+'</span><span class="dd">'+d.day_name.slice(0,3)+'</span>';
+    scr.appendChild(btn);
+  });
+  var d = findDay(DATE_KEY);
+  document.getElementById('dlbl').textContent = 'Select date — '+MONTH_NAME+' 2026' + (d? (' · '+d.day_name+' '+d.date+'/'+MM+'') : '');
+}
+function selectDate(key){
+  DATE_KEY = key;
+  renderDateBar();
+  if(TAB==='rem') renderReminders();
+  if(TAB==='wa') renderWhatsapp();
+  if(TAB==='sch') renderSchedule();
+}
+
+/* ---------- reminders tab ---------- */
+function sentKey(dateKey, teamIdx, name, idx){ return dateKey+'|'+teamIdx+'|'+idx+'|'+name; }
+
+function renderReminders(){
+  var wrap = document.getElementById('rem-wrap');
+  var d = findDay(DATE_KEY);
+  if(!d){ wrap.innerHTML = '<div class="empty">&#128197;<br>Select a date above</div>'; updateProgress(); return; }
+  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'tr', label:(d.team_label||'TRIO')}]
+                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1'}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2'}];
+  var html = '';
+  teams.forEach(function(team, ti){
+    if(!team.list.length) return;
+    html += '<div class="tcard"><div class="thdr '+team.cls+'"><span>'+team.label+' &middot; '+esc(team.name)+'</span><span class="thi">'+team.list.length+' clientes</span></div>';
+    team.list.forEach(function(c, ci){
+      var key = sentKey(DATE_KEY, ti, c.name, ci);
+      var sent = !!SENT[key];
+      var ph = phoneFor(c.name);
+      var msg = smsMessage(d, c, team);
+      html += '<div class="crow'+(sent?' sent':'')+'" data-key="'+esc(key)+'">';
+      html += '<span class="dh">&#9776;</span>';
+      html += '<span class="etab '+etaClass(c.eta_ampm)+'">'+esc(etaShort(c.eta_ampm))+'</span>';
+      html += '<div class="ci"><div class="cn">'+esc(c.name)+'</div><div class="cd">'+fmtDur(c.dur)+'</div>';
+      html += '<div class="cp'+(ph?'':' no')+'">'+(ph?esc(ph):'sem telefone')+'</div></div>';
+      if(ph){
+        html += '<a class="smsa" data-msg="'+esc(msg)+'" href="'+smsHref(ph,msg)+'" onclick="smsTap(event,\''+escJs(key)+'\')">&#128172; SMS</a>';
+      } else {
+        html += '<button class="noph" onclick="markSent(\''+escJs(key)+'\')">Sem tel.</button>';
+      }
+      html += '<button class="rmbtn" onclick="confirmRemove('+ti+','+ci+')">&#10005;</button>';
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+  wrap.innerHTML = html || '<div class="empty">&#128197;<br>Nenhum cliente neste dia</div>';
+  updateProgress();
+}
+function smsMessage(day, client, team){
+  var time = /^\d{1,2}:\d{2} (AM|PM)$/.test(client.eta_ampm||'') ? client.eta_ampm : 'the scheduled time';
+  return 'Dear customer,\n\n'+
+    'Just a friendly reminder that your house cleaning is scheduled for tomorrow around '+time+'.\n\n'+
+    'If you won\'t be home, please ensure we have access to the property by leaving a key in a safe place and letting us know where it is, or by providing a key copy if you haven\'t already done so.\n\n'+
+    'Kind regards,\nRenata\nSetup Cleaning Services';
+}
+function markSent(key){
+  SENT[key] = !SENT[key];
+  scheduleSave(); /* saves to this device immediately, synchronously */
+  /* Deferred: the SMS row is a real <a href="sms:..."> link, and this handler
+     runs on the same click. Re-rendering rem-wrap synchronously here replaces
+     (destroys) that very <a> element before the browser can act on its href,
+     which silently cancels the handoff to the Messages app. Yielding to the
+     next tick lets the native navigation fire first. */
+  setTimeout(function(){
+    renderReminders();
+  }, 0);
+}
+function smsTap(ev, key){
+  /* Belt-and-suspenders for the SMS button: copy the message to the
+     clipboard synchronously (works everywhere, no permissions surprises
+     since it runs inside the tap gesture) so the text is always available
+     to paste even if the phone/browser doesn't hand off to Messages via
+     the sms: link — some browsers or in-app views block or ignore that. */
+  var el = ev.currentTarget;
+  var msg = el.getAttribute('data-msg') || '';
+  copyToClipboard(msg, function(){});
+  markSent(key);
+}
+function updateProgress(){
+  var d = findDay(DATE_KEY);
+  var bar = document.getElementById('bbar');
+  if(!d){ return; }
+  var all = [];
+  var teams = d.is_trio ? [d.t1] : [d.t1, d.t2];
+  teams.forEach(function(list, ti){ list.forEach(function(c, ci){ all.push(sentKey(DATE_KEY, ti, c.name, ci)); }); });
+  var sentCount = all.filter(function(k){ return SENT[k]; }).length;
+  var prg = document.getElementById('prg');
+  var btn = document.getElementById('nbtn');
+  if(all.length===0){ prg.textContent=''; btn.textContent='Send Next SMS'; btn.className='nbtn'; return; }
+  prg.textContent = sentCount+' de '+all.length+' enviados';
+  if(sentCount>=all.length){ btn.textContent='Tudo enviado ✓'; btn.className='nbtn done'; }
+  else { btn.textContent='Send Next SMS'; btn.className='nbtn'; }
+}
+function nextSMS(){
+  var d = findDay(DATE_KEY);
+  if(!d) return;
+  var teams = d.is_trio ? [{list:d.t1, name:d.team1_name}] : [{list:d.t1, name:d.team1_name}, {list:d.t2, name:d.team2_name}];
+  for(var ti=0; ti<teams.length; ti++){
+    var list = teams[ti].list;
+    for(var ci=0; ci<list.length; ci++){
+      var key = sentKey(DATE_KEY, ti, list[ci].name, ci);
+      if(!SENT[key]){
+        var ph = phoneFor(list[ci].name);
+        var msg = smsMessage(d, list[ci], teams[ti]);
+        SENT[key] = true;
+        scheduleSave(); /* saves to this device immediately, synchronously */
+        if(ph){
+          copyToClipboard(msg, function(){});
+          var href = smsHref(ph, msg);
+          setTimeout(function(){ window.location.href = href; }, 0);
+        } else {
+          showToast(list[ci].name+' não tem telefone cadastrado.', true);
+        }
+        setTimeout(function(){ renderReminders(); }, 0);
+        return;
+      }
+    }
+  }
+  showToast('Todos os lembretes de hoje já foram enviados!');
+}
+function confirmRemove(teamIdx, clientIdx){
+  var d = findDay(DATE_KEY);
+  var list = teamIdx===0 ? d.t1 : d.t2;
+  var name = list[clientIdx].name;
+  openConfirm('Remover "'+name+'" da agenda de '+d.day_name+' '+d.date+'/'+MM+'?', function(){
+    list.splice(clientIdx,1);
+    renderReminders();
+    if(TAB==='sch') renderSchedule();
+    scheduleSave();
+    showToast(name+' removido(a).');
+  });
+}
+
+/* ---------- whatsapp tab ---------- */
+function renderWhatsapp(){
+  var wrap = document.getElementById('wa-wrap');
+  var d = findDay(DATE_KEY);
+  if(!d){ wrap.innerHTML = '<div class="empty">&#128172;<br>Select a date first</div>'; return; }
+  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'tr', label:(d.team_label||'TRIO')}]
+                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1'}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2'}];
+  var html = '';
+  teams.forEach(function(team, ti){
+    if(!team.list.length) return;
+    var msg = waMessage(d, team);
+    var mid = 'wamsg-'+ti;
+    html += '<div class="wacard"><div class="wahdr '+team.cls+'">'+team.label+' &middot; '+esc(team.name)+'</div>';
+    html += '<div class="wabody"><div class="wamsg" id="'+mid+'">'+esc(msg)+'</div>';
+    html += '<button class="wacopy" id="cp-'+ti+'" onclick="copyMsg('+ti+')">&#128172; Copy Message</button></div></div>';
+  });
+  wrap.innerHTML = html || '<div class="empty">&#128172;<br>Nenhum cliente neste dia</div>';
+}
+function waTeamLabel(team){
+  if(team.cls==='pk') return 'Team Pink';
+  if(team.cls==='bl') return 'Team Blue';
+  if(team.label==='SOLO') return team.name;
+  return 'Team Orange'; // Friday trio
+}
+function waMessage(day, team){
+  var lines = ['Hi '+waTeamLabel(team)+', thank you for today. For '+day.day_name+':', ''];
+  team.list.forEach(function(c, i){
+    lines.push((i+1)+'. '+etaShort(c.eta_ampm)+' — '+c.name+' ('+fmtDur(c.dur)+')');
+  });
+  var total = team.list.reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0);
+  lines.push('');
+  lines.push('Total: '+fmtDur(total));
+  return lines.join('\n');
+}
+function copyMsg(ti){
+  var el = document.getElementById('wamsg-'+ti);
+  var text = el.textContent;
+  var btn = document.getElementById('cp-'+ti);
+  function done(){
+    var old = btn.textContent;
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('ok');
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 1800);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, function(){ fallbackCopy(text, done); });
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, cb){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); }catch(e){}
+  document.body.removeChild(ta);
+  cb();
+}
+
+/* ---------- schedule tab ---------- */
+function renderSchedule(){
+  var wrap = document.getElementById('sch-wrap');
+  var d = findDay(DATE_KEY);
+  if(!d){ wrap.innerHTML = '<div class="empty">&#9999;&#65039;<br>Select a date first</div>'; return; }
+  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'pk', label:(d.team_label||'TRIO'), ti:0}]
+                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1', ti:0}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2', ti:1}];
+  var html = '<div class="scard"><div class="sbdy op">';
+  teams.forEach(function(team){
+    html += '<div class="slbl '+team.cls+'">'+team.label+' &middot; <input class="tname" value="'+esc(team.name)+'" onchange="changeTeamName('+team.ti+',this.value)"></div>';
+    team.list.forEach(function(c, ci){
+      html += '<div class="srow" draggable="true" data-ti="'+team.ti+'" data-ci="'+ci+'" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="dragDrop(event)" ondragend="dragEnd(event)">';
+      html += '<span class="sdh">&#9776;</span>';
+      html += '<span class="scn">'+esc(c.name)+'</span>';
+      html += '<input class="sdur" type="number" step="0.25" min="0" value="'+c.dur+'" onchange="changeDur('+team.ti+','+ci+',this.value)">';
+      html += '<span class="seta">'+esc(etaShort(c.eta_ampm))+'</span>';
+      html += '<button class="srm" onclick="confirmRemove('+team.ti+','+ci+')">&#10005;</button>';
+      html += '</div>';
+    });
+    html += '<div class="sadd"><input class="saname" id="saname-'+team.ti+'" placeholder="Nome do cliente"><input class="sadur" id="sadur-'+team.ti+'" type="number" step="0.25" value="1.5" placeholder="h"><button class="saddbtn" onclick="addScheduleClient('+team.ti+')">+ Add</button></div>';
+    html += '<button class="recalc" onclick="recalcAndSave('+team.ti+')">&#8635; Recalcular horários</button>';
+  });
+  html += '</div></div>';
+  wrap.innerHTML = html;
+}
+function changeTeamName(ti, v){
+  var d = findDay(DATE_KEY);
+  if(ti===0) d.team1_name = v.trim(); else d.team2_name = v.trim();
+  scheduleSave();
+  showToast('Equipe atualizada.');
+}
+function getListForTeam(d, ti){ return ti===0 ? d.t1 : d.t2; }
+function changeDur(ti, ci, val){
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, ti);
+  list[ci].dur = parseFloat(val)||0;
+  recalcTeam(list);
+  renderSchedule();
+  scheduleSave();
+}
+function recalcAndSave(ti){
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, ti);
+  recalcTeam(list);
+  renderSchedule();
+  renderReminders();
+  scheduleSave();
+  showToast('Horários recalculados.');
+}
+function addScheduleClient(ti){
+  var d = findDay(DATE_KEY);
+  var nameEl = document.getElementById('saname-'+ti);
+  var durEl = document.getElementById('sadur-'+ti);
+  var name = nameEl.value.trim();
+  if(!name){ showToast('Digite o nome do cliente.', true); return; }
+  var dur = parseFloat(durEl.value)||1;
+  var list = getListForTeam(d, ti);
+  list.push({name:name, dur:dur, fill:'none', eta_ampm:''});
+  recalcTeam(list);
+  nameEl.value=''; durEl.value='1.5';
+  renderSchedule();
+  scheduleSave();
+  showToast(name+' adicionado(a) à agenda.');
+}
+/* drag reorder — schedule tab */
+var DRAG_FROM = null;
+function dragStart(e){
+  var row = e.currentTarget;
+  DRAG_FROM = {ti: parseInt(row.dataset.ti), ci: parseInt(row.dataset.ci)};
+  row.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+function dragOver(e){ e.preventDefault(); }
+function dragDrop(e){
+  e.preventDefault();
+  var row = e.currentTarget;
+  var to = {ti: parseInt(row.dataset.ti), ci: parseInt(row.dataset.ci)};
+  if(!DRAG_FROM || DRAG_FROM.ti !== to.ti || DRAG_FROM.ci === to.ci){ DRAG_FROM=null; return; }
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, to.ti);
+  var item = list.splice(DRAG_FROM.ci, 1)[0];
+  list.splice(to.ci, 0, item);
+  recalcTeam(list);
+  DRAG_FROM = null;
+  renderSchedule();
+  renderReminders();
+  scheduleSave();
+}
+function dragEnd(e){ e.currentTarget.classList.remove('dragging'); }
+
+/* ---------- pending tab ---------- */
+function renderPending(){
+  var wrap = document.querySelector('#pg-pen .wrap');
+  var html = '<div class="sectlbl">Ainda sem dia em '+(MM==='09'?'setembro':'outubro')+'</div>';
+  if(PENDING.length===0){ html += '<div class="emptysm">Nenhum cliente pendente 🎉</div>'; }
+  PENDING.forEach(function(p, i){
+    html += '<div class="pcard"><div class="pname">'+esc(p.name)+'</div><div class="pnote">'+esc(p.note)+'</div>';
+    html += '<button class="pbtn" onclick="openSchedulePicker('+i+')">+ Agendar</button></div>';
+  });
+  html += '<div class="sectlbl" style="margin-top:20px">A confirmar</div>';
+  if(CONFIRM.length===0){ html += '<div class="emptysm">Nada pendente de confirmação 🎉</div>'; }
+  CONFIRM.forEach(function(c, i){
+    html += '<div class="cfmcard"><div class="cfmname">'+esc(c.name)+'</div><div class="cfmnote">'+esc(c.note)+'</div>';
+    html += '<button class="cfmbtn" onclick="dismissConfirm('+i+')">Marcar como resolvido</button></div>';
+  });
+  wrap.innerHTML = html;
+}
+function dismissConfirm(i){
+  CONFIRM.splice(i,1);
+  renderPending();
+  scheduleSave();
+}
+function openSchedulePicker(pendingIdx){
+  var p = PENDING[pendingIdx];
+  var mo = document.getElementById('sched-mo');
+  document.getElementById('sched-title').textContent = 'Agendar: '+p.name;
+  var dsel = document.getElementById('sched-date');
+  dsel.innerHTML = SS.map(function(d){ return '<option value="'+dayKey(d)+'">'+d.day_name+' '+d.date+'/'+MM+'</option>'; }).join('');
+  if(DATE_KEY) dsel.value = DATE_KEY;
+  function fillTeams(){
+    var d = findDay(dsel.value);
+    var tsel = document.getElementById('sched-team');
+    if(d.is_trio){ tsel.innerHTML = '<option value="0">TRIO — '+esc(d.team1_name)+'</option>'; }
+    else { tsel.innerHTML = '<option value="0">TEAM 1 — '+esc(d.team1_name)+'</option><option value="1">TEAM 2 — '+esc(d.team2_name)+'</option>'; }
+  }
+  dsel.onchange = fillTeams;
+  fillTeams();
+  document.getElementById('sched-dur').value = p.dur || 1.5;
+  mo.dataset.pendingIdx = pendingIdx;
+  mo.classList.add('on');
+}
+function closeSchedMod(){ document.getElementById('sched-mo').classList.remove('on'); }
+function saveSchedulePick(){
+  var mo = document.getElementById('sched-mo');
+  var pendingIdx = parseInt(mo.dataset.pendingIdx);
+  var p = PENDING[pendingIdx];
+  var dkey = document.getElementById('sched-date').value;
+  var ti = parseInt(document.getElementById('sched-team').value);
+  var dur = parseFloat(document.getElementById('sched-dur').value)||1;
+  var d = findDay(dkey);
+  var list = getListForTeam(d, ti);
+  list.push({name:p.name, dur:dur, fill:'none', eta_ampm:''});
+  recalcTeam(list);
+  PENDING.splice(pendingIdx,1);
+  closeSchedMod();
+  renderPending();
+  scheduleSave();
+  showToast(p.name+' agendado(a) para '+d.day_name+' '+d.date+'/'+MM+'.');
+}
+
+/* ---------- contacts tab ---------- */
+function renderContacts(){
+  var list = document.getElementById('con-list');
+  var sorted = SC.map(function(c,i){ return {c:c, i:i}; }).slice(1).sort(function(a,b){ return a.c.name.localeCompare(b.c.name); });
+  var html = '';
+  sorted.forEach(function(item){
+    var c = item.c;
+    html += '<div class="conrow"><div class="ci"><div class="coname">'+esc(c.name)+'</div>';
+    html += '<div class="coph'+(c.phone?'':' no')+'">'+(c.phone?esc(c.phone):'sem telefone')+'</div></div>';
+    html += '<button class="ebtn" onclick="openMod('+item.i+')">Editar</button>';
+    html += '<button class="dbtn2" onclick="confirmDeleteContact('+item.i+')">Excluir</button></div>';
+  });
+  list.innerHTML = html || '<div class="emptysm">Nenhum contato ainda</div>';
+}
+function openMod(idx){
+  EDIT_CONTACT_IDX = idx;
+  document.getElementById('mdtitle').textContent = idx>=0 ? 'Editar Contato' : 'Add Contact';
+  document.getElementById('mname').value = idx>=0 ? SC[idx].name : '';
+  document.getElementById('mphone').value = idx>=0 ? SC[idx].phone : '';
+  document.getElementById('modal').classList.add('on');
+}
+function closeMod(){ document.getElementById('modal').classList.remove('on'); }
+function saveCon(){
+  var name = document.getElementById('mname').value.trim();
+  var phone = document.getElementById('mphone').value.trim();
+  if(!name){ showToast('Digite o nome do contato.', true); return; }
+  if(EDIT_CONTACT_IDX>=0){ SC[EDIT_CONTACT_IDX].name = name; SC[EDIT_CONTACT_IDX].phone = phone; }
+  else { SC.push({name:name, phone:phone}); }
+  closeMod();
+  renderContacts();
+  if(TAB==='rem') renderReminders();
+  scheduleSave();
+  showToast('Contato salvo.');
+}
+function confirmDeleteContact(idx){
+  var name = SC[idx].name;
+  openConfirm('Excluir o contato "'+name+'"?', function(){
+    SC.splice(idx,1);
+    renderContacts();
+    scheduleSave();
+    showToast('Contato excluído.');
+  });
+}
+
+/* ---------- employees tab (pay rates) ---------- */
+function renderEmployees(){
+  var wrap = document.getElementById('emp-wrap');
+  var html = '<div class="ccard"><div class="ctitle">Ajuda de custo (carro próprio)</div>';
+  html += '<div class="emprow gas"><label>Gasolina — valor fixo por dia ($)</label><input type="number" step="0.5" min="0" value="'+GAS_FLAT+'" onchange="changeGasFlat(this.value)"></div></div>';
+  html += '<div class="ccard"><div class="ctitle">Funcionários <button class="addbtn" onclick="openEmpMod(-1)">+ Add</button></div>';
+  if(EMP.length===0){ html += '<div class="emptysm">Nenhum funcionário cadastrado</div>'; }
+  EMP.forEach(function(e, i){
+    html += '<div class="emprow"><div class="empname">'+esc(e.name)+'</div>';
+    html += '<div class="empr">Cleaner: $'+(parseFloat(e.cleaner)||0).toFixed(2)+'/h</div>';
+    html += '<div class="empr">Driver (company car): $'+(parseFloat(e.driverCo)||0).toFixed(2)+'/h</div>';
+    html += '<div class="empr">Driver (own car): $'+(parseFloat(e.driverOwn)||0).toFixed(2)+'/h + gas</div>';
+    html += '<button class="ebtn" onclick="openEmpMod('+i+')">Editar</button>';
+    html += '<button class="dbtn2" onclick="confirmDeleteEmp('+i+')">Excluir</button></div>';
+  });
+  html += '</div>';
+  wrap.innerHTML = html;
+}
+function openEmpMod(idx){
+  EDIT_EMP_IDX = idx;
+  document.getElementById('emtitle').textContent = idx>=0 ? 'Editar Funcionário' : 'Novo Funcionário';
+  document.getElementById('emname').value = idx>=0 ? EMP[idx].name : '';
+  document.getElementById('emcleaner').value = idx>=0 ? (EMP[idx].cleaner||0) : 0;
+  document.getElementById('emdco').value = idx>=0 ? (EMP[idx].driverCo||0) : 0;
+  document.getElementById('emdown').value = idx>=0 ? (EMP[idx].driverOwn||0) : 0;
+  document.getElementById('emp-mo').classList.add('on');
+}
+function closeEmpMod(){ document.getElementById('emp-mo').classList.remove('on'); }
+function saveEmp(){
+  var name = document.getElementById('emname').value.trim();
+  if(!name){ showToast('Digite o nome.', true); return; }
+  var cleaner = parseFloat(document.getElementById('emcleaner').value)||0;
+  var dco = parseFloat(document.getElementById('emdco').value)||0;
+  var down = parseFloat(document.getElementById('emdown').value)||0;
+  if(EDIT_EMP_IDX>=0){ EMP[EDIT_EMP_IDX] = {name:name, cleaner:cleaner, driverCo:dco, driverOwn:down}; }
+  else { EMP.push({name:name, cleaner:cleaner, driverCo:dco, driverOwn:down}); }
+  closeEmpMod();
+  renderEmployees();
+  if(TAB==='po') renderPOs();
+  scheduleSave();
+  showToast('Funcionário salvo.');
+}
+function confirmDeleteEmp(idx){
+  var name = EMP[idx].name;
+  openConfirm('Excluir o funcionário "'+name+'"?', function(){
+    EMP.splice(idx,1);
+    renderEmployees();
+    scheduleSave();
+    showToast('Funcionário excluído.');
+  });
+}
+function changeGasFlat(v){
+  GAS_FLAT = parseFloat(v)||0;
+  if(TAB==='po') renderPOs();
+  scheduleSave();
+}
+
+/* ---------- purchase orders (POs) tab ---------- */
+function empNamesForTeam(s){
+  return String(s||'').split('/').map(function(x){ return x.trim(); }).filter(function(x){ return x && x!=='?'; });
+}
+function findEmp(name){
+  var n = String(name||'').toLowerCase();
+  for(var i=0;i<EMP.length;i++){ if(EMP[i].name.toLowerCase()===n) return EMP[i]; }
+  return null;
+}
+function dayRoster(d){
+  var hoursBy = {}, order = [];
+  function add(teamName, list){
+    var h = (list||[]).reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0);
+    empNamesForTeam(teamName).forEach(function(n){
+      if(!(n in hoursBy)){ hoursBy[n]=0; order.push(n); }
+      hoursBy[n] += h;
+    });
+  }
+  add(d.team1_name, d.t1);
+  if(!d.is_trio) add(d.team2_name, d.t2);
+  return order.map(function(n){ return {name:n, hours:hoursBy[n]}; });
+}
+function defaultRoleFor(emp){
+  if(!emp) return 'cleaner';
+  if(parseFloat(emp.driverCo)>0) return 'driverCo';
+  if(parseFloat(emp.driverOwn)>0) return 'driverOwn';
+  return 'cleaner';
+}
+function rateFor(emp, role){
+  if(!emp) return 0;
+  if(role==='cleaner') return parseFloat(emp.cleaner)||0;
+  if(role==='driverCo') return parseFloat(emp.driverCo)||0;
+  if(role==='driverOwn') return parseFloat(emp.driverOwn)||0;
+  return 0;
+}
+function roleLabel(role){
+  if(role==='driverCo') return 'Driver (company car)';
+  if(role==='driverOwn') return 'Driver (own car)';
+  return 'Cleaner';
+}
+function povKey(dateKey, name){ return dateKey+'|'+name; }
+function sortedSSDates(){
+  return SS.map(function(d){ return d; }).sort(function(a,b){ return parseInt(a.date)-parseInt(b.date); });
+}
+function periodDays(){
+  if(!PERIOD.start || !PERIOD.end) return [];
+  var s = parseInt(PERIOD.start), e = parseInt(PERIOD.end);
+  return sortedSSDates().filter(function(d){ var v=parseInt(d.date); return v>=s && v<=e; });
+}
+function buildPORows(){
+  var days = periodDays();
+  var byEmp = {};
+  days.forEach(function(d){
+    var dk = dayKey(d);
+    dayRoster(d).forEach(function(r){
+      var emp = findEmp(r.name);
+      var key = povKey(dk, r.name);
+      var ov = POOVR[key] || {};
+      if(ov.excluded) return;
+      var hours = (ov.hours!=null) ? ov.hours : r.hours;
+      var role = ov.role || defaultRoleFor(emp);
+      var rate = rateFor(emp, role);
+      var gas = role==='driverOwn' ? (parseFloat(GAS_FLAT)||0) : 0;
+      var pay = hours*rate + gas;
+      if(!byEmp[r.name]) byEmp[r.name] = {name:r.name, rows:[], total:0};
+      byEmp[r.name].rows.push({sortKey:dk, date:d.date, day_name:d.day_name, hours:hours, role:role, rate:rate, gas:gas, pay:pay, key:key, adhoc:false});
+      byEmp[r.name].total += pay;
+    });
+  });
+  POADHOC.forEach(function(a, ai){
+    var dv = parseInt(a.date);
+    if(isNaN(dv) || dv<parseInt(PERIOD.start) || dv>parseInt(PERIOD.end)) return;
+    var emp = findEmp(a.name);
+    var rate = rateFor(emp, a.role);
+    var gas = a.role==='driverOwn' ? (parseFloat(GAS_FLAT)||0) : 0;
+    var pay = (parseFloat(a.hours)||0)*rate + gas;
+    if(!byEmp[a.name]) byEmp[a.name] = {name:a.name, rows:[], total:0};
+    byEmp[a.name].rows.push({sortKey:'9'+a.date, date:a.date, day_name:a.note||'Ajuste manual', hours:a.hours, role:a.role, rate:rate, gas:gas, pay:pay, adhocIdx:ai, adhoc:true});
+    byEmp[a.name].total += pay;
+  });
+  return byEmp;
+}
+function renderPOs(){
+  var wrap = document.getElementById('po-wrap');
+  var days = sortedSSDates();
+  var ssel = document.getElementById('po-start'), esel = document.getElementById('po-end');
+  if(days.length){
+    var opts = days.map(function(d){ return '<option value="'+d.date+'">'+d.day_name.slice(0,3)+' '+d.date+'/'+MM+'</option>'; }).join('');
+    ssel.innerHTML = opts; esel.innerHTML = opts;
+    ssel.value = PERIOD.start; esel.value = PERIOD.end;
+  }
+  var byEmp = buildPORows();
+  var names = Object.keys(byEmp).sort();
+  var html = '<div class="pomargin">Cada linha vem da agenda (horas do time naquele dia). Ajuste horas/função se precisar, ou remova uma linha sem afetar a agenda. Valor em vermelho = funcionário sem taxa cadastrada (aba Rates). Use "+ Ajuste manual" para lançar algo fora da agenda.</div>';
+  if(names.length===0){ html += '<div class="empty">&#128203;<br>Nenhuma hora neste período</div>'; }
+  names.forEach(function(name){
+    var g = byEmp[name];
+    g.rows.sort(function(a,b){ return (a.sortKey||'').localeCompare(b.sortKey||''); });
+    html += '<div class="pocard"><div class="pohdr"><span>'+esc(name)+'</span><span class="pototal">$'+g.total.toFixed(2)+'</span></div>';
+    g.rows.forEach(function(r){
+      html += '<div class="porow">';
+      html += '<div class="pod">'+esc(String(r.day_name).slice(0,3))+' '+esc(r.date)+'/'+MM+'</div>';
+      if(r.adhoc){
+        html += '<input class="pohrs" type="number" step="0.25" value="'+r.hours+'" onchange="changeAdhocHours('+r.adhocIdx+',this.value)">';
+        html += '<select class="porole" onchange="changeAdhocRole('+r.adhocIdx+',this.value)">';
+      } else {
+        html += '<input class="pohrs" type="number" step="0.25" value="'+(Math.round(r.hours*100)/100)+'" onchange="changePORowHours(\''+escJs(r.key)+'\',this.value)">';
+        html += '<select class="porole" onchange="changePORowRole(\''+escJs(r.key)+'\',this.value)">';
+      }
+      ['cleaner','driverCo','driverOwn'].forEach(function(rl){
+        html += '<option value="'+rl+'"'+(r.role===rl?' selected':'')+'>'+roleLabel(rl)+'</option>';
+      });
+      html += '</select>';
+      html += '<div class="popay'+(r.rate===0?' zero':'')+'">$'+r.pay.toFixed(2)+'</div>';
+      if(r.adhoc){ html += '<button class="rmbtn" onclick="removeAdhoc('+r.adhocIdx+')">&#10005;</button>'; }
+      else { html += '<button class="rmbtn" onclick="excludePORow(\''+escJs(r.key)+'\')" title="Remover deste PO">&#10005;</button>'; }
+      html += '</div>';
+    });
+    html += '<button class="pocopy" onclick="copyPO(\''+escJs(name)+'\')">&#128172; Copiar PO</button></div>';
+  });
+  html += '<button class="addadhoc" onclick="openAdhocMod()">+ Ajuste manual</button>';
+  wrap.innerHTML = html;
+}
+function changePeriodStart(v){ PERIOD.start=v; renderPOs(); scheduleSave(); }
+function changePeriodEnd(v){ PERIOD.end=v; renderPOs(); scheduleSave(); }
+function changePORowHours(key, val){
+  POOVR[key] = POOVR[key] || {};
+  POOVR[key].hours = parseFloat(val)||0;
+  renderPOs();
+  scheduleSave();
+}
+function changePORowRole(key, val){
+  POOVR[key] = POOVR[key] || {};
+  POOVR[key].role = val;
+  renderPOs();
+  scheduleSave();
+}
+function excludePORow(key){
+  openConfirm('Remover esta linha deste PO? (não altera a agenda)', function(){
+    POOVR[key] = POOVR[key] || {};
+    POOVR[key].excluded = true;
+    renderPOs();
+    scheduleSave();
+    showToast('Linha removida do PO.');
+  });
+}
+function openAdhocMod(){
+  document.getElementById('adname').value = '';
+  document.getElementById('addate').value = PERIOD.start || '01';
+  document.getElementById('adhrs').value = 1;
+  document.getElementById('adrole').value = 'cleaner';
+  document.getElementById('adnote').value = '';
+  document.getElementById('adhoc-mo').classList.add('on');
+}
+function closeAdhocMod(){ document.getElementById('adhoc-mo').classList.remove('on'); }
+function saveAdhoc(){
+  var name = document.getElementById('adname').value.trim();
+  if(!name){ showToast('Digite o nome.', true); return; }
+  var date = document.getElementById('addate').value.trim();
+  var hours = parseFloat(document.getElementById('adhrs').value)||0;
+  var role = document.getElementById('adrole').value;
+  var note = document.getElementById('adnote').value.trim();
+  POADHOC.push({name:name, date:date, hours:hours, role:role, note:note});
+  closeAdhocMod();
+  renderPOs();
+  scheduleSave();
+  showToast('Ajuste adicionado.');
+}
+function changeAdhocHours(idx, val){ POADHOC[idx].hours = parseFloat(val)||0; renderPOs(); scheduleSave(); }
+function changeAdhocRole(idx, val){ POADHOC[idx].role = val; renderPOs(); scheduleSave(); }
+function removeAdhoc(idx){
+  openConfirm('Remover este ajuste manual?', function(){
+    POADHOC.splice(idx,1);
+    renderPOs();
+    scheduleSave();
+  });
+}
+function copyPO(name){
+  var byEmp = buildPORows();
+  var g = byEmp[name];
+  if(!g){ showToast('Sem horas neste período.', true); return; }
+  g.rows.sort(function(a,b){ return (a.sortKey||'').localeCompare(b.sortKey||''); });
+  var lines = ['Purchase Order — '+name, 'Setup Cleaning Services', 'Período: '+PERIOD.start+'/'+MM+' – '+PERIOD.end+'/'+MM+'/2026', ''];
+  g.rows.forEach(function(r){
+    var line = String(r.day_name).slice(0,3)+' '+r.date+'/'+MM+' — '+fmtDur(parseFloat(r.hours)||0)+' — '+roleLabel(r.role)+' ($'+r.rate.toFixed(2)+'/h)';
+    if(r.gas>0) line += ' + $'+r.gas.toFixed(2)+' gas';
+    line += ' = $'+r.pay.toFixed(2);
+    lines.push(line);
+  });
+  lines.push('');
+  lines.push('TOTAL: $'+g.total.toFixed(2));
+  copyToClipboard(lines.join('\n'), function(){ showToast('PO de '+name+' copiado!'); });
+}
+
+/* ---------- generic confirm modal ---------- */
+function openConfirm(msg, cb){
+  document.getElementById('cfm-msg').textContent = msg;
+  CONFIRM_CB = cb;
+  document.getElementById('cfm-mo').classList.add('on');
+}
+function cfmYes(){ document.getElementById('cfm-mo').classList.remove('on'); if(CONFIRM_CB) CONFIRM_CB(); CONFIRM_CB=null; }
+function cfmNo(){ document.getElementById('cfm-mo').classList.remove('on'); CONFIRM_CB=null; }
+
+/* ---------- reset ---------- */
+function resetAll(){
+  openConfirm('Resetar todos os lembretes marcados como enviados este mês?', function(){
+    SENT = {};
+    renderReminders();
+    scheduleSave();
+    showToast('Lembretes resetados.');
+  });
+}
+
+/* ---------- helpers ---------- */
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escJs(s){ return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"); }
+
+/* ---------- init ---------- */
+async function init(){
+  await loadState();
+  if(SS.length){
+    DATE_KEY = dayKey(SS[0]);
+    var now = new Date();
+    if(pad2(now.getMonth()+1)===MM){
+      for(var i=0;i<SS.length;i++){ if(parseInt(SS[i].date)>now.getDate()){ DATE_KEY = dayKey(SS[i]); break; } }
+    }
+  }
+  renderDateBar();
+  gTab('rem');
+  if(window.claude && window.claude.use){
+    window.claude.use('artifact').then(function(ns){ ART = ns; });
+  }
+}
+document.addEventListener('DOMContentLoaded', init);
+
+
+</script>
+</body>
+</html>
