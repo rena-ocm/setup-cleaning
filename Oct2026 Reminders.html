@@ -191,6 +191,9 @@ body{font-family:"Nunito Sans",sans-serif;background:var(--bg);color:var(--ink);
 .smv{min-width:32px;min-height:34px;padding:4px 6px;margin-right:0}
 .sr2 .srm{margin-left:auto;padding:4px 6px}
 
+.lunchtag{font-size:11px;font-weight:700;color:#8a5a00;background:#fff8e6;border:1px solid #ffe4a3;border-radius:6px;padding:4px 8px;margin-bottom:6px}
+.rulenote{font-size:11px;color:var(--mu);line-height:1.6;margin:8px 0 24px}
+
 </style>
 </head>
 <body>
@@ -346,11 +349,33 @@ function decToClock(decHour){
   var h12 = h%12; if(h12===0) h12=12;
   return h12+':'+pad2(m)+' '+ap;
 }
+/* Time rules: day starts at 8:00; 5 min of travel between houses; one 15 min
+   lunch stop placed at the gap between jobs that falls closest to 12:00 PM
+   (only when the team's day actually runs past noon). */
+var START_H = 8, TRAVEL_MIN = 5, LUNCH_MIN = 15, LUNCH_AT = 12;
+function computeTimes(list){
+  var n = list.length, starts = [], ends = [], cur = START_H, i;
+  for(i=0;i<n;i++){
+    starts[i] = cur;
+    ends[i] = cur + (parseFloat(list[i].dur)||0);
+    cur = ends[i] + TRAVEL_MIN/60;
+  }
+  var lunchBefore = -1;
+  if(n>1 && ends[n-1] > LUNCH_AT){
+    var best = 1e9;
+    for(i=0;i<n-1;i++){
+      var d = Math.abs((ends[i] + TRAVEL_MIN/120) - LUNCH_AT);
+      if(d < best){ best = d; lunchBefore = i+1; }
+    }
+    for(i=lunchBefore;i<n;i++){ starts[i] += LUNCH_MIN/60; ends[i] += LUNCH_MIN/60; }
+  }
+  return {starts:starts, ends:ends, lunchBefore:lunchBefore};
+}
 function recalcTeam(list){
-  var cur = 8.0; // 8:00 AM start
+  var t = computeTimes(list);
   for(var i=0;i<list.length;i++){
-    list[i].eta_ampm = decToClock(cur);
-    cur += (parseFloat(list[i].dur)||0);
+    list[i].eta_ampm = decToClock(t.starts[i]);
+    list[i].lunch = (i===t.lunchBefore);
   }
 }
 
@@ -668,6 +693,7 @@ function waTeamLabel(team){
 function waMessage(day, team){
   var lines = ['Hi '+waTeamLabel(team)+', thank you for today. For '+day.day_name+':', ''];
   team.list.forEach(function(c, i){
+    if(c.lunch) lines.push('   (lunch break '+LUNCH_MIN+' min)');
     lines.push((i+1)+'. '+etaShort(c.eta_ampm)+' — '+c.name+' ('+fmtDur(c.dur)+')');
   });
   lines.push('');
@@ -750,6 +776,7 @@ function renderSchedule(){
     html += '<button class="madd" onclick="addMember('+ti+')">+ Pessoa</button></div></div>';
     team.list.forEach(function(c, ci){
       html += '<div class="srow2">';
+      if(c.lunch) html += '<div class="lunchtag">&#127860; Parada de '+LUNCH_MIN+' min para almoço antes deste cliente</div>';
       html += '<input class="scname" value="'+esc(c.name)+'" onchange="changeClientName('+ti+','+ci+',this.value)" aria-label="Cliente">';
       html += '<div class="sr2">';
       html += '<label>h</label><input class="sdur" type="number" inputmode="decimal" step="0.25" min="0" value="'+c.dur+'" onchange="changeDur('+ti+','+ci+',this.value)" aria-label="Duração em horas">';
@@ -761,10 +788,18 @@ function renderSchedule(){
       html += '</div></div>';
     });
     html += '<div class="sadd"><input class="saname" id="saname-'+ti+'" placeholder="Nome do cliente"><input class="sadur" id="sadur-'+ti+'" type="number" step="0.25" value="1.5" placeholder="h"><button class="saddbtn" onclick="addScheduleClient('+ti+')">+ Add</button></div>';
-    html += '<button class="recalc" onclick="recalcAndSave('+ti+')">&#8635; Recalcular horários em sequência (8:00)</button>';
+    html += '<button class="recalc" onclick="recalcAndSave('+ti+')">&#8635; Recalcular horários desta equipe</button>';
   });
   html += '</div></div>';
+  html += '<button class="recalc" onclick="recalcDay()">&#8635; Recalcular horários do dia todo</button>';
+  html += '<div class="rulenote">Começa às 8:00 &middot; '+TRAVEL_MIN+' min entre as casas &middot; '+LUNCH_MIN+' min de parada para o almoço no intervalo mais perto das 12:00. Só muda os horários quando você toca em Recalcular, mexe na ordem ou no tempo.</div>';
   wrap.innerHTML = html;
+}
+function recalcDay(){
+  var d = findDay(DATE_KEY);
+  dayTeams(d).forEach(function(t){ recalcTeam(t.list); });
+  renderSchedule(); scheduleSave();
+  showToast('Horários do dia recalculados.');
 }
 function removeMember(ti, mi){
   var d = findDay(DATE_KEY);
@@ -887,16 +922,9 @@ function addScheduleClient(ti){
   if(!name){ showToast('Digite o nome do cliente.', true); return; }
   var dur = parseFloat(durEl.value)||1;
   var list = getListForTeam(d, ti);
-  var eta = '';
-  if(list.length){
-    var last = list[list.length-1];
-    var m = /^(\d{1,2}):(\d{2}) (AM|PM)$/.exec(last.eta_ampm||'');
-    if(m){
-      var h = parseInt(m[1],10)%12 + (m[3]==='PM'?12:0);
-      eta = decToClock(h + parseInt(m[2],10)/60 + (parseFloat(last.dur)||0));
-    }
-  } else { eta = '8:00 AM'; }
-  list.push({name:name, dur:dur, fill:'none', eta_ampm:eta});
+  list.push({name:name, dur:dur, fill:'none', eta_ampm:''});
+  var tm = computeTimes(list);
+  list[list.length-1].eta_ampm = decToClock(tm.starts[list.length-1]);
   renderSchedule();
   scheduleSave();
   showToast(name+' adicionado(a) à agenda.');
