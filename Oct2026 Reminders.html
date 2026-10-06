@@ -155,6 +155,42 @@ body{font-family:"Nunito Sans",sans-serif;background:var(--bg);color:var(--ink);
 .addadhoc{width:100%;background:none;border:1.5px dashed var(--br);color:var(--mu);border-radius:10px;padding:12px;font-family:Nunito,sans-serif;font-weight:700;font-size:13px;cursor:pointer;margin-bottom:20px}
 .pomargin{color:#8a5a00;background:#fff8e6;border:1px solid #ffe4a3;border-radius:10px;padding:10px 12px;font-size:11px;line-height:1.6;margin-bottom:12px}
 
+/* ---- team layout editor ---- */
+.layoutbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.layoutbar span{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--mu);font-weight:700;width:100%}
+.lbtn{flex:1;min-width:120px;padding:10px 8px;border:1.5px solid var(--br);background:#fff;border-radius:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:12px;color:var(--ink);cursor:pointer}
+.lbtn.on{background:var(--bl);border-color:var(--bl);color:#fff}
+.mems{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0 10px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--br);border-radius:16px;padding:4px 6px 4px 10px;font-size:12px;font-weight:600}
+.chip button{border:none;background:none;color:var(--mu);font-size:12px;cursor:pointer;padding:2px 4px}
+.msel{padding:6px;border:1.5px solid var(--br);border-radius:8px;font-size:12px;background:#fff;max-width:150px}
+.madd{padding:7px 10px;border:none;border-radius:8px;background:var(--gn);color:#fff;font-family:Nunito,sans-serif;font-weight:700;font-size:12px;cursor:pointer}
+.smv{border:none;background:var(--bg);border-radius:6px;padding:4px 7px;font-size:14px;cursor:pointer;margin-right:4px}
+
+/* ---- schedule editor v3 ---- */
+.mems{display:block;margin:6px 0 10px}
+.mrow{display:flex;align-items:center;gap:8px;margin-bottom:6px;background:var(--bg);border-radius:8px;padding:6px 8px}
+.mn{font-weight:700;font-size:13px;min-width:70px}
+.mrole{flex:1;min-width:0;padding:6px 4px;border:1.5px solid var(--br);border-radius:7px;font-size:12px;background:#fff}
+.mhint{flex:1;font-size:11px;color:var(--mu)}
+.mx{border:none;background:none;color:var(--rd);font-size:15px;cursor:pointer;padding:4px 6px}
+.madrow{display:flex;gap:8px;align-items:center;margin-top:6px}
+.srow2{background:#f8f8f8;border-radius:8px;padding:8px 10px;margin-bottom:8px}
+.scname{width:100%;box-sizing:border-box;padding:7px 8px;border:1.5px solid var(--br);border-radius:6px;font-size:14px;font-weight:600;background:#fff;margin-bottom:6px}
+.sr2{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.sr2 label{font-size:11px;color:var(--mu)}
+.sr2 .sdur{width:56px}
+.etain{width:84px;padding:6px;border:1.5px solid var(--br);border-radius:6px;font-size:12px;text-align:center;font-family:Nunito,sans-serif;font-weight:700;color:var(--bl);background:#e8f4fd}
+.smv:disabled{opacity:.3}
+.smv{min-width:34px;min-height:34px}
+.sr2 .srm{margin-left:auto}
+.sr2{gap:5px;flex-wrap:nowrap}
+.sr2 label{display:none}
+.sr2 .sdur{width:62px;padding:6px 4px;font-size:13px}
+.etain{width:78px}
+.smv{min-width:32px;min-height:34px;padding:4px 6px;margin-right:0}
+.sr2 .srm{margin-left:auto;padding:4px 6px}
+
 </style>
 </head>
 <body>
@@ -227,12 +263,12 @@ body{font-family:"Nunito Sans",sans-serif;background:var(--bg);color:var(--ink);
 </div></div>
 <div class="toast" id="toast"></div>
 <script>
-var MM="10",MONTH_NAME="October",MONTH_ID="oct2026";
-var DEFAULT_SS=[{"date": "01", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 1, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "10:40 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Flavia", "dur": 1.3333, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "02", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 1, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "TBD"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "06", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "t2": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}]}, {"date": "07", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Paulo / Karol", "team2_name": "? / Camila", "t1": [{"name": "Theresa", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Piet", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "11:05 AM"}]}, {"date": "08", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 2, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Melanie Dobss", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": ""}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}]}, {"date": "09", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 2, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Rafaa", "dur": 1.0, "fill": "none", "eta_ampm": ""}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "t2": []}, {"date": "10", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 2, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "12", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "? / Camila", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Richard", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Kelsey", "dur": 1.5, "fill": "none", "eta_ampm": "??? CHECAR SMS"}, {"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": ""}]}, {"date": "13", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Geoff", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}]}, {"date": "14", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Augusto / Karol", "team2_name": "? / Camila", "t1": [{"name": "Margaret", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}]}, {"date": "15", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 3, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "16", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 3, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "17", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 3, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "19", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Lynda Hurst", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Sandy Shane", "dur": 2.25, "fill": "none", "eta_ampm": "9:50 AM"}], "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Boland", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Tnb", "dur": 1.75, "fill": "none", "eta_ampm": ""}]}, {"date": "20", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "t2": [{"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}]}, {"date": "21", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Piet", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Jude", "dur": 2.5, "fill": "none", "eta_ampm": "confirmar total time"}], "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "11:05 AM"}]}, {"date": "22", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 4, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Jacqui Jervis", "dur": 2.0, "fill": "none", "eta_ampm": ""}]}, {"date": "23", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 4, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "t2": []}, {"date": "24", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 4, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}, {"date": "26", "month": "10", "day_name": "Monday", "day_idx": 0, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Ilka / Camila", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Sue", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": "9:35 AM"}]}, {"date": "27", "month": "10", "day_name": "Tuesday", "day_idx": 1, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Samuel Roborgh", "dur": 1.5, "fill": "none", "eta_ampm": ""}]}, {"date": "28", "month": "10", "day_name": "Wednesday", "day_idx": 2, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Aymara / Karol", "team2_name": "Mateus / Camila", "t1": [{"name": "Rebecca", "dur": 1.75, "fill": "none", "eta_ampm": "12:55 PM"}, {"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}]}, {"date": "29", "month": "10", "day_name": "Thursday", "day_idx": 3, "week": 5, "is_trio": false, "team_size": 2, "team1_name": "Mariah / Karol", "team2_name": "Paulo / Camila", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}]}, {"date": "30", "month": "10", "day_name": "Friday", "day_idx": 4, "week": 5, "is_trio": true, "team_size": 3, "team1_name": "Paulo / Camila / Karol", "team2_name": "", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "t2": []}, {"date": "31", "month": "10", "day_name": "Saturday", "day_idx": 5, "week": 5, "is_trio": true, "team_size": 1, "team1_name": "Aymara", "team2_name": "", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "t2": [], "team_label": "SOLO"}];
+var MM="10",MONTH_NAME="October",MONTH_ID="oct2026",RESET_SCHEDULE=true;
+var DEFAULT_SS=[{"week": 1, "date": "01", "month": "10", "day_name": "Thursday", "day_idx": 3, "is_trio": false, "team1_name": "Mariah / Karol", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "10:40 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team2_name": "Paulo / Camila", "t2": [{"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Flavia", "dur": 1.3333, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}], "team_size": 2}, {"week": 1, "date": "02", "month": "10", "day_name": "Friday", "day_idx": 4, "is_trio": true, "team1_name": "Paulo / Camila / Karol", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "TBD"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}], "team2_name": "", "t2": [], "team_size": 3}, {"week": 2, "date": "06", "month": "10", "day_name": "Tuesday", "day_idx": 1, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "team2_name": "Ilka / Camila", "t2": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}], "team3_name": "Aymara", "t3": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "team_size": 2}, {"week": 2, "date": "07", "month": "10", "day_name": "Wednesday", "day_idx": 2, "is_trio": false, "team1_name": "Paulo / Karol", "t1": [{"name": "Theresa", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "9:40 AM"}, {"name": "Melissa", "dur": 1.5, "fill": "none", "eta_ampm": "12:45 PM"}], "team2_name": "David / Camila", "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}], "team_size": 2}, {"week": 2, "date": "08", "month": "10", "day_name": "Thursday", "day_idx": 3, "is_trio": false, "team1_name": "Mariah / Karol", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Melanie Dobss", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": ""}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}], "team2_name": "Paulo / Camila", "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}], "team_size": 2}, {"week": 2, "date": "09", "month": "10", "day_name": "Friday", "day_idx": 4, "is_trio": true, "team1_name": "Paulo / Camila / Karol", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Rafaa", "dur": 1.0, "fill": "none", "eta_ampm": ""}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "team2_name": "", "t2": [], "team_size": 3}, {"week": 2, "date": "10", "month": "10", "day_name": "Saturday", "day_idx": 5, "is_trio": true, "team1_name": "Aymara", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "team2_name": "", "t2": [], "team_size": 1}, {"week": 3, "date": "12", "month": "10", "day_name": "Monday", "day_idx": 0, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Richard", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team2_name": "? / Camila", "t2": [{"name": "Kelsey", "dur": 1.5, "fill": "none", "eta_ampm": "??? CHECAR SMS"}, {"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team_size": 2}, {"week": 3, "date": "13", "month": "10", "day_name": "Tuesday", "day_idx": 1, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team2_name": "Augusto / Camila", "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Geoff", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": ""}], "team_size": 2}, {"week": 3, "date": "14", "month": "10", "day_name": "Wednesday", "day_idx": 2, "is_trio": false, "team1_name": "Paulo / Karol", "t1": [{"name": "Margaret", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Rebecca", "dur": 1.75, "fill": "none", "eta_ampm": ""}], "team2_name": "Augusto / Camila", "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}], "team_size": 2}, {"week": 3, "date": "15", "month": "10", "day_name": "Thursday", "day_idx": 3, "is_trio": false, "team1_name": "Mariah / Karol", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "team2_name": "Paulo / Camila", "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}], "team_size": 2}, {"week": 3, "date": "16", "month": "10", "day_name": "Friday", "day_idx": 4, "is_trio": true, "team1_name": "Paulo / Camila / Karol", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "team2_name": "", "t2": [], "team_size": 3}, {"week": 3, "date": "17", "month": "10", "day_name": "Saturday", "day_idx": 5, "is_trio": true, "team1_name": "Aymara", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "team2_name": "", "t2": [], "team_size": 1}, {"week": 4, "date": "19", "month": "10", "day_name": "Monday", "day_idx": 0, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "kim", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Lynda Hurst", "dur": 1.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Sandy Shane", "dur": 2.25, "fill": "none", "eta_ampm": "9:50 AM"}], "team2_name": "Ilka / Camila", "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Boland", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Amanda Tnb", "dur": 1.75, "fill": "none", "eta_ampm": ""}], "team_size": 2}, {"week": 4, "date": "20", "month": "10", "day_name": "Tuesday", "day_idx": 1, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kathryn McKeon", "dur": 1.75, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Margie Ireland", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}], "team2_name": "Augusto / Camila", "t2": [{"name": "Mark", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Katherine Cooke", "dur": 1.75, "fill": "none", "eta_ampm": "2:15 PM"}], "team_size": 2}, {"week": 4, "date": "21", "month": "10", "day_name": "Wednesday", "day_idx": 2, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Piet", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Angela + Windows", "dur": 2.75, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Jude", "dur": 2.5, "fill": "none", "eta_ampm": "confirmar total time"}], "team2_name": "Augusto / Camila", "t2": [{"name": "Bridget", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maddie Porter", "dur": 1.5, "fill": "none", "eta_ampm": "1:25 PM"}, {"name": "Flavia", "dur": 2.0, "fill": "none", "eta_ampm": "11:05 AM"}], "team_size": 2}, {"week": 4, "date": "22", "month": "10", "day_name": "Thursday", "day_idx": 3, "is_trio": false, "team1_name": "Mariah / Karol", "t1": [{"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kat Harrison", "dur": 1.5, "fill": "none", "eta_ampm": "10:05 AM"}, {"name": "Heidi", "dur": 2.25, "fill": "none", "eta_ampm": ""}, {"name": "Laura Wilson", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "team2_name": "Paulo / Camila", "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Josie Montano", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Jacqui Jervis", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "team_size": 2}, {"week": 4, "date": "23", "month": "10", "day_name": "Friday", "day_idx": 4, "is_trio": true, "team1_name": "Paulo / Camila / Karol", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Nichole (Reclamou Piso e Cupboards)", "dur": 1.1667, "fill": "none", "eta_ampm": "TBD"}, {"name": "Megan Auld + Some Windows", "dur": 1.75, "fill": "none", "eta_ampm": ""}, {"name": "Monique", "dur": 1.3333, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}], "team2_name": "", "t2": [], "team_size": 3}, {"week": 4, "date": "24", "month": "10", "day_name": "Saturday", "day_idx": 5, "is_trio": true, "team1_name": "Aymara", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "team2_name": "", "t2": [], "team_size": 1}, {"week": 5, "date": "26", "month": "10", "day_name": "Monday", "day_idx": 0, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Vanessa", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Charity", "dur": 2.25, "fill": "none", "eta_ampm": "10:20 AM"}, {"name": "Sue", "dur": 2.0, "fill": "none", "eta_ampm": ""}], "team2_name": "Ilka / Camila", "t2": [{"name": "Annissa see SMS requests", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Anna Laffey", "dur": 2.5, "fill": "none", "eta_ampm": "11:25 AM"}, {"name": "Linda Nettle", "dur": 1.5, "fill": "none", "eta_ampm": "9:35 AM"}], "team_size": 2}, {"week": 5, "date": "27", "month": "10", "day_name": "Tuesday", "day_idx": 1, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Cameron", "dur": 3.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Dale", "dur": 1.5, "fill": "none", "eta_ampm": "11:05 AM"}, {"name": "Rita Mesch", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team2_name": "Augusto / Camila", "t2": [{"name": "Amy Bowater", "dur": 1.75, "fill": "none", "eta_ampm": "12:25 PM"}, {"name": "Bess", "dur": 2.25, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Samuel Roborgh", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team_size": 2}, {"week": 5, "date": "28", "month": "10", "day_name": "Wednesday", "day_idx": 2, "is_trio": false, "team1_name": "Aymara / Karol", "t1": [{"name": "Liz Walsh", "dur": 2.0, "fill": "none", "eta_ampm": "confirmar total time"}, {"name": "Chiara Santomauro", "dur": 1.5, "fill": "none", "eta_ampm": ""}], "team2_name": "Augusto / Camila", "t2": [{"name": "William Taylor", "dur": 1.5, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Maegan Zangari", "dur": 2.0, "fill": "none", "eta_ampm": "9:30 AM"}, {"name": "Olivia", "dur": 2.0, "fill": "none", "eta_ampm": "10:35 AM"}], "team_size": 2}, {"week": 5, "date": "29", "month": "10", "day_name": "Thursday", "day_idx": 3, "is_trio": false, "team1_name": "Mariah / Karol", "t1": [{"name": "Maddie Moloney", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Marianne", "dur": 2.25, "fill": "none", "eta_ampm": "11:40 AM"}, {"name": "Kevin Nicholson", "dur": 2.0, "fill": "none", "eta_ampm": "10:40 AM"}], "team2_name": "Paulo / Camila", "t2": [{"name": "Shirley", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Liz McGowan", "dur": 1.5, "fill": "none", "eta_ampm": "9:05 AM"}, {"name": "Calliope", "dur": 1.75, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Kirstie Barker", "dur": 1.5, "fill": "none", "eta_ampm": "10:40 AM"}], "team_size": 2}, {"week": 5, "date": "30", "month": "10", "day_name": "Friday", "day_idx": 4, "is_trio": true, "team1_name": "Paulo / Camila / Karol", "t1": [{"name": "My", "dur": 1.0, "fill": "none", "eta_ampm": "8:00 AM"}, {"name": "Rebecca M", "dur": 1.3333, "fill": "none", "eta_ampm": "TBD"}, {"name": "Steph", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}, {"name": "Barbara", "dur": 1.3333, "fill": "none", "eta_ampm": "11:55 AM"}, {"name": "Louise", "dur": 1.0, "fill": "none", "eta_ampm": "9:35 AM"}], "team2_name": "", "t2": [], "team_size": 3}, {"week": 5, "date": "31", "month": "10", "day_name": "Saturday", "day_idx": 5, "is_trio": true, "team1_name": "Aymara", "t1": [{"name": "Liz Salon", "dur": 2.0, "fill": "none", "eta_ampm": "8:00 AM"}], "team2_name": "", "t2": [], "team_size": 1}];
 var DEFAULT_SC=[{"name": "Customer", "phone": "Phone Number"}, {"name": "Amanda Tnetennba", "phone": "0478 614 530"}, {"name": "Amanda Boland (F)", "phone": "0434 595 590"}, {"name": "Angela Allen (F)", "phone": "0414 060 251"}, {"name": "Ane Sheehan", "phone": "0416 899 521"}, {"name": "Anna Laffey", "phone": "0438 605 126"}, {"name": "Annissa O'Shea", "phone": "0421 505 166"}, {"name": "Amy Bowater", "phone": "0429 471 601"}, {"name": "Anthony Black Family", "phone": "07 3236 2536"}, {"name": "Barbara Davidson", "phone": "0407 574 649"}, {"name": "Bess Howard", "phone": "0409 759 539"}, {"name": "Bridget Bradley", "phone": "0439 661 804"}, {"name": "Calliope Ainsworth", "phone": "0415 970 223"}, {"name": "Cate Gerber", "phone": "0402 785 298"}, {"name": "Chiara Santomauro", "phone": "0403 714 886"}, {"name": "Charity Corrigan", "phone": "0423 847 161"}, {"name": "Cameron Scott (W)", "phone": "0413 692 375"}, {"name": "Dee Hyde", "phone": "0492 903 758"}, {"name": "Eva Turek", "phone": "0406 589 748"}, {"name": "Eltanin Elysion Koffee Light", "phone": "0458 675 728"}, {"name": "Flavia", "phone": "0421 219 469"}, {"name": "Gab Edmonds", "phone": "0481 905 998"}, {"name": "Geoff", "phone": "0413 954 047"}, {"name": "Heidi Thompson", "phone": "0413 082 427"}, {"name": "Jess Ash", "phone": "0451 180 332"}, {"name": "Josie Montano", "phone": "0417 771 643"}, {"name": "Jacquelyn Jervis", "phone": "0428 552 259"}, {"name": "Jude (M)", "phone": "0403 058 132"}, {"name": "Kat Harrison", "phone": "0403 011 179"}, {"name": "Kathryn McKeon", "phone": "0410 301 729"}, {"name": "Kate Hadden", "phone": "0414 055 559"}, {"name": "Kathy Benson", "phone": "0438 663 857"}, {"name": "Kelsey Erdelyi", "phone": "0450 044 030"}, {"name": "Kelly Jean", "phone": "0400 055 441"}, {"name": "Kirstie Barker", "phone": "0416 845 691"}, {"name": "Kim Price", "phone": "0467 965 492"}, {"name": "Laura Field", "phone": "0466 433 670"}, {"name": "Laura Wilson Gooch", "phone": "0439 775 466"}, {"name": "Lynda Hurst", "phone": "0434 373 811"}, {"name": "Liz McGowan", "phone": "0400 124 871"}, {"name": "Linda Nettle", "phone": "0434 843 417"}, {"name": "Louise Hole (F)", "phone": "0418 791 609"}, {"name": "My Schofiel", "phone": "0402 701 362"}, {"name": "Maddie Porter", "phone": "0488 481 721"}, {"name": "Margaret (F)", "phone": "0402 344 796"}, {"name": "Maddie Moloney", "phone": "0426 250 673"}, {"name": "Margie Ireland", "phone": "0418 734 425"}, {"name": "Marianne Garden (F)", "phone": "0490 075 616"}, {"name": "Maegan Zangari", "phone": "0401 484 033"}, {"name": "Mark Bisaro", "phone": "0431 344 134"}, {"name": "Melissa Whitehead", "phone": "0411 486 720"}, {"name": "Melanie Dobbs", "phone": "0431 842 946"}, {"name": "Monique Anne Prior", "phone": "0408 241 043"}, {"name": "Neva Woolmer", "phone": "0403 662 704"}, {"name": "Nichole McHardy", "phone": "0428 961 550"}, {"name": "Olivia Law", "phone": "0431 733 390"}, {"name": "Pam", "phone": "0400 290 117"}, {"name": "Rebecca Leanne Michael", "phone": "0418 201 179"}, {"name": "Rita Mesch", "phone": "0422 316 615"}, {"name": "Rebecca Wilde", "phone": "0402 046 368"}, {"name": "Richard Ralph", "phone": "0409 600 598"}, {"name": "Samuel Roborgh", "phone": "0426 260 491"}, {"name": "Sandy Shane Hunter", "phone": "0409 031 246"}, {"name": "Shirley", "phone": "0423 642 251"}, {"name": "Steph", "phone": "0413 505 558"}, {"name": "Sue Patterson", "phone": "0417 774 829"}, {"name": "Tanya McKee", "phone": "0401 619 149"}, {"name": "Tina Taneja", "phone": "0458 041 646"}, {"name": "Theresa Spencer", "phone": "0407 161 942"}, {"name": "Trudy", "phone": "0418 212 909"}, {"name": "Vanessa Petch", "phone": "0418 190 106"}, {"name": "Amanda Tnb", "phone": "0478 614 530"}, {"name": "Megan Auld", "phone": "0414 902 966"}, {"name": "Jacqui Jervis", "phone": "0428 552 259"}, {"name": "Rebecca M", "phone": "0418 201 179"}, {"name": "Amanda Boland", "phone": "0434 595 590"}, {"name": "Laura Wilson", "phone": "0439 775 466"}, {"name": "Rebecca", "phone": "0418 201 179"}, {"name": "Tara", "phone": ""}, {"name": "Katherine Cooke", "phone": ""}, {"name": "William Taylor", "phone": ""}, {"name": "Liz Walsh", "phone": ""}, {"name": "Melanie Dobss", "phone": "0431 842 946"}, {"name": "Piet", "phone": ""}, {"name": "Dale", "phone": ""}, {"name": "Kevin Nicholson", "phone": ""}, {"name": "Liz Salon", "phone": ""}, {"name": "Rafaa", "phone": ""}];
-var DEFAULT_PENDING=[];
-var DEFAULT_CONFIRM=[{"name": "Equipe sem nome (3 dias)", "note": "Qua 07.10, Seg 12.10 e Qua 14.10: o Team 2 está como \"/ Camila\" (falta o nome da outra pessoa). Aparece como \"? / Camila\" — corrija na aba Schedule (toque no nome da equipe) para o PO sair certo."}, {"name": "Segunda 05.10 — HOLIDAY", "note": "Marcado como feriado no seu schedule, então não criei esse dia no app."}, {"name": "Liz Salon — terça 06.10", "note": "No seu schedule ela aparece na terça 06.10 (Aymara, 8:00) e também todo sábado. Como a Aymara já está no Team 1 na terça no mesmo horário, deixei só os sábados — confirme se a terça era para ficar."}, {"name": "Kelsey — segunda 12.10 (Team 2)", "note": "ETA \"??? CHECAR SMS\". Além disso, o total do Team 2 nesse dia no seu schedule diz 5h30, mas com a Kelsey a soma dá 7h — conferir se a Kelsey entra mesmo."}, {"name": "Nomes ajustados", "note": "\"Carol\" (trio de sexta) = Karol e \"Matheus\" = Mateus, para bater com os cadastros de Rates. Funcionários novos: Ilka (terças/segundas) e Augusto (quarta 14.10) — sem taxa cadastrada ainda (aba Rates)."}, {"name": "Liz Walsh / Angela / Jude", "note": "Seguem com \"confirmar total time\" — o SMS usa \"the scheduled time\" até ter horário real."}, {"name": "Clientes sem telefone", "note": "Novos sem número na aba Contacts: Dale, Kevin Nicholson, Liz Salon, Rafaa (e os que já estavam sem: Katherine Cooke, Liz Walsh, Piet, William Taylor)."}];
-var DEFAULT_EMP=[{"name": "Aymara", "cleaner": 0, "driverCo": 33, "driverOwn": 35}, {"name": "Paulo", "cleaner": 0, "driverCo": 32, "driverOwn": 0}, {"name": "Karol", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Camila", "cleaner": 32, "driverCo": 0, "driverOwn": 0}, {"name": "Mateus", "cleaner": 0, "driverCo": 32, "driverOwn": 35}, {"name": "Mariah", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Ilka", "cleaner": 0, "driverCo": 0, "driverOwn": 0}, {"name": "Augusto", "cleaner": 0, "driverCo": 0, "driverOwn": 0}];
+var DEFAULT_PENDING=[{"name": "Nada Pye", "dur": 2, "note": "09:50 (set). Cliente nova, ter em setembro."}, {"name": "Kevin Nicholson — Shutters (extra mensal)", "dur": 2, "note": "Além da limpeza semanal de quinta; shutters é serviço mensal à parte."}, {"name": "Dee Hyde", "dur": 2, "note": "Ainda sem dia fixo desde agosto (12:25 hint agosto)."}, {"name": "Melanie", "dur": 1.5, "note": "Ainda sem dia fixo desde agosto (cliente diferente de Melanie Dobss)."}, {"name": "Rebecca Wild", "dur": 3.5, "note": "A cada 3 semanas, 3.5h no total."}, {"name": "Rose Benett", "dur": 3, "note": "Ainda sem dia fixo desde agosto; total 3h (Roma Park)."}];
+var DEFAULT_CONFIRM=[{"name": "Schedule atualizado", "note": "Esta versão usa o arquivo Schedule_Outubro_2026 que você mandou depois (equipes, clientes e horários dessa planilha). Seus SMS já marcados como enviados, contatos, taxas e ajustes de PO foram mantidos."}, {"name": "Equipes: pessoas novas", "note": "David (qua 07.10, Team 2), Augusto (ter 13, qua 14, ter 20, qua 21, ter 27 e qua 28), Ilka (seg/ter) e Paulo na quarta (Team 1). Sem taxa cadastrada ainda para David, Augusto e Ilka — aba Rates. A nota no final da planilha (Matheus, Grazi, Maria) ficou diferente das células; usei as células."}, {"name": "Segunda 12.10 — Team 2 sem nome", "note": "Está como \"? / Camila\" (falta a outra pessoa). Toque em + Pessoa na aba Schedule para definir."}, {"name": "Terça 06.10 — Liz Salon (Aymara)", "note": "Está na planilha como uma 3ª equipe (só a Aymara, 2h às 8:00) além do Team 1 com Karol. Coloquei como Team 3 nesse dia; se foi engano, remova a Equipe 3 na aba Schedule."}, {"name": "Quarta 07.10 — Maddie Porter", "note": "Na planilha o horário dela ficou sem ETA e sobrou um 11:05 numa linha vazia. Usei 11:05 AM para a Maddie Porter e 1:25 PM para a Flavia (como estão na planilha). Confira."}, {"name": "Quarta 28.10 — Rebecca", "note": "A Rebecca (12:55) saiu do Team 1 nessa data (o nome foi apagado e sobrou só o horário). Removi. Confirme."}, {"name": "Já na agenda (da lista verde)", "note": "Estes da lista \"para encaixar\" já aparecem no schedule: Richard: 12.10; Geoff: 13.10; Samuel Roborgh: 27.10; Theresa: 07.10; Amanda Boland: 19.10; Megan Auld + Some Windows: 23.10; Melanie Dobss: 08.10; Sue: 26.10; Chiara Santomauro: 01.10, 28.10; Rafaa (Mustafa): 09.10; Jude: 21.10."}, {"name": "Em espera", "note": "Kelsey: on hold até dezembro (mas está na segunda 12.10 com \"CHECAR SMS\"). Shirley: on hold por estar no hospital (mas aparece todas as quintas). Tanya pausada até novembro. Confirme se tiram da agenda."}, {"name": "Nomes padronizados", "note": "\"Carol\" → Karol. \"Matheus\" não aparece mais nas células de outubro."}];
+var DEFAULT_EMP=[{"name": "Aymara", "cleaner": 0, "driverCo": 33, "driverOwn": 35}, {"name": "Paulo", "cleaner": 0, "driverCo": 32, "driverOwn": 0}, {"name": "Karol", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Camila", "cleaner": 32, "driverCo": 0, "driverOwn": 0}, {"name": "Mateus", "cleaner": 0, "driverCo": 32, "driverOwn": 35}, {"name": "Mariah", "cleaner": 30, "driverCo": 0, "driverOwn": 0}, {"name": "Ilka", "cleaner": 0, "driverCo": 0, "driverOwn": 0}, {"name": "Augusto", "cleaner": 0, "driverCo": 0, "driverOwn": 0}, {"name": "David", "cleaner": 0, "driverCo": 0, "driverOwn": 0}];
 var DEFAULT_GAS_FLAT=10;
 var SS=[],SC=[],SENT={},PENDING=[],CONFIRM=[];
 /* ============ Setup Cleaning Services — App ============ */
@@ -326,13 +362,12 @@ function fmtDur(h){
   return hh+'h'+pad2(mm)+'min';
 }
 
-function teamColorClass(idx){ return idx===0?'pk':(idx===1?'bl':'tr'); }
 
 /* ---------- persistence ----------
-   State lives in a separate JSON file (data/state.json) inside the artifact's
-   own file store, published via the files-form of artifact.publish. index.html
-   itself never changes after the first publish — only that data file does. */
-var LS_KEY = 'scs_'+MONTH_ID+'_state_v1';
+   Everything the user edits is saved on this device (localStorage) immediately,
+   in the same tick as the edit, and once more when the page is hidden/closed. */
+var LS_KEY = 'scs_'+MONTH_ID+'_state_v2';
+var LS_KEY_V1 = 'scs_'+MONTH_ID+'_state_v1';
 function stateSnapshot(){
   return {SS:SS, SC:SC, SENT:SENT, PENDING:PENDING, CONFIRM:CONFIRM,
           EMP:EMP, GAS_FLAT:GAS_FLAT, POOVR:POOVR, POADHOC:POADHOC, PERIOD:PERIOD};
@@ -343,20 +378,14 @@ function saveLocal(){
     return true;
   }catch(e){ return false; }
 }
-function loadLocal(){
+function loadLocal(key){
   try{
-    var raw = localStorage.getItem(LS_KEY);
+    var raw = localStorage.getItem(key || LS_KEY);
     if(!raw) return null;
     var j = JSON.parse(raw);
     return (j && j.SS) ? j : null;
   }catch(e){ return null; }
 }
-/* scheduleSave() is called after every edit. The on-device save (localStorage)
-   always happens IMMEDIATELY and synchronously, in the same tick as the edit —
-   never delayed — because a delayed save can be lost if the page is closed or
-   backgrounded a moment later (e.g. right after deleting a client). Only the
-   optional cloud sync (ART.publish, for viewers where claude.ai granted write
-   access) is debounced, since that one is a network call and just a bonus. */
 function scheduleSave(){
   var localOk = saveLocal();
   if(!localOk) showToast('Não foi possível salvar neste dispositivo.', true);
@@ -367,11 +396,21 @@ async function syncRemote(){
   if(!ART) return;
   try{
     await ART.publish({'data/state.json': JSON.stringify(stateSnapshot())});
-  }catch(e){
-    /* conflict / not_writer / not_granted / capability_disabled and similar:
-       the on-device save from scheduleSave() already covers this device, so
-       stay quiet — this is just the optional cross-device sync failing. */
-  }
+  }catch(e){ /* optional cloud sync only */ }
+}
+function normSent(m){
+  var out = {};
+  Object.keys(m||{}).forEach(function(k){
+    var mm = /^(\d{4})\|\d+\|\d+\|(.*)$/.exec(k);
+    out[mm ? mm[1]+'|'+mm[2] : k] = m[k];
+  });
+  return out;
+}
+function mergeDefaultEmp(list){
+  var have = {};
+  list.forEach(function(e){ have[String(e.name).toLowerCase()] = true; });
+  DEFAULT_EMP.forEach(function(e){ if(!have[e.name.toLowerCase()]) list.push(JSON.parse(JSON.stringify(e))); });
+  return list;
 }
 async function loadState(){
   var fromServer = null;
@@ -381,16 +420,29 @@ async function loadState(){
       var j = await res.json();
       if(j && j.SS) fromServer = j;
     }
-  }catch(e){ /* not reachable from this view (e.g. standalone/home-screen) */ }
-  var fromLocal = loadLocal();
-  var chosen = fromServer || fromLocal;
+  }catch(e){ /* not reachable from this view */ }
+  var chosen = fromServer || loadLocal(LS_KEY);
+  var migrated = false;
+  if(!chosen){
+    var old = loadLocal(LS_KEY_V1);
+    if(old){
+      chosen = old; migrated = true;
+      if(RESET_SCHEDULE){
+        chosen.SS = DEFAULT_SS; chosen.PENDING = DEFAULT_PENDING; chosen.CONFIRM = DEFAULT_CONFIRM;
+        var ov = chosen.POOVR || {};
+        Object.keys(ov).forEach(function(k){ delete ov[k].hours; if(!ov[k].role && !ov[k].excluded) delete ov[k]; });
+        chosen.POOVR = ov; chosen.PERIOD = null;
+      }
+    }
+  }
   if(chosen){
-    SS = chosen.SS; SC = chosen.SC || []; SENT = chosen.SENT || {}; PENDING = chosen.PENDING || []; CONFIRM = chosen.CONFIRM || [];
-    EMP = chosen.EMP || DEFAULT_EMP;
+    SS = chosen.SS; SC = chosen.SC || []; SENT = normSent(chosen.SENT); PENDING = chosen.PENDING || []; CONFIRM = chosen.CONFIRM || [];
+    EMP = mergeDefaultEmp(chosen.EMP || []);
     GAS_FLAT = (chosen.GAS_FLAT!=null) ? chosen.GAS_FLAT : DEFAULT_GAS_FLAT;
     POOVR = chosen.POOVR || {};
     POADHOC = chosen.POADHOC || [];
     PERIOD = chosen.PERIOD || defaultPeriod();
+    if(migrated) saveLocal();
     return;
   }
   SS = DEFAULT_SS; SC = DEFAULT_SC; SENT = {}; PENDING = DEFAULT_PENDING; CONFIRM = DEFAULT_CONFIRM;
@@ -406,6 +458,8 @@ function defaultPeriod(){
   var end = candidates.length ? candidates[candidates.length-1] : days[days.length-1];
   return {start: days[0].date, end: end.date};
 }
+window.addEventListener('pagehide', function(){ saveLocal(); });
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') saveLocal(); });
 
 /* ---------- toast ---------- */
 var TOAST_TIMER = null;
@@ -456,26 +510,47 @@ function selectDate(key){
   if(TAB==='sch') renderSchedule();
 }
 
+/* ---------- teams of a day ---------- */
+function teamMembers(str){
+  return String(str||'').split('/').map(function(x){ return x.trim(); }).filter(Boolean);
+}
+function singleLabel(d){
+  var n = teamMembers(d.team1_name).length;
+  if(n===1) return 'SOLO';
+  if(n===3) return 'TRIO';
+  return n+' PESSOAS';
+}
+function dayTeams(d){
+  if(d.is_trio) return [{ti:0, name:d.team1_name, list:d.t1, cls:'tr', label:singleLabel(d)}];
+  var a = [{ti:0, name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1'},
+           {ti:1, name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2'}];
+  if(d.t3) a.push({ti:2, name:d.team3_name||'', list:d.t3, cls:'tr', label:'TEAM 3'});
+  return a;
+}
+function getListForTeam(d, ti){ return ti===0 ? d.t1 : (ti===1 ? d.t2 : d.t3); }
+function getTeamName(d, ti){ return ti===0 ? d.team1_name : (ti===1 ? d.team2_name : (d.team3_name||'')); }
+function setTeamNameStr(d, ti, v){
+  if(ti===0) d.team1_name = v; else if(ti===1) d.team2_name = v; else d.team3_name = v;
+}
+function teamTotal(list){ return (list||[]).reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0); }
+
 /* ---------- reminders tab ---------- */
-function sentKey(dateKey, teamIdx, name, idx){ return dateKey+'|'+teamIdx+'|'+idx+'|'+name; }
+function sentKey(dateKey, name){ return dateKey+'|'+name; }
 
 function renderReminders(){
   var wrap = document.getElementById('rem-wrap');
   var d = findDay(DATE_KEY);
   if(!d){ wrap.innerHTML = '<div class="empty">&#128197;<br>Select a date above</div>'; updateProgress(); return; }
-  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'tr', label:(d.team_label||'TRIO')}]
-                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1'}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2'}];
   var html = '';
-  teams.forEach(function(team, ti){
+  dayTeams(d).forEach(function(team){
     if(!team.list.length) return;
-    html += '<div class="tcard"><div class="thdr '+team.cls+'"><span>'+team.label+' &middot; '+esc(team.name)+'</span><span class="thi">'+team.list.length+' clientes</span></div>';
+    html += '<div class="tcard"><div class="thdr '+team.cls+'"><span>'+team.label+' &middot; '+esc(team.name)+'</span><span class="thi">'+team.list.length+' clientes &middot; '+fmtDur(teamTotal(team.list))+'</span></div>';
     team.list.forEach(function(c, ci){
-      var key = sentKey(DATE_KEY, ti, c.name, ci);
+      var key = sentKey(DATE_KEY, c.name);
       var sent = !!SENT[key];
       var ph = phoneFor(c.name);
       var msg = smsMessage(d, c, team);
       html += '<div class="crow'+(sent?' sent':'')+'" data-key="'+esc(key)+'">';
-      html += '<span class="dh">&#9776;</span>';
       html += '<span class="etab '+etaClass(c.eta_ampm)+'">'+esc(etaShort(c.eta_ampm))+'</span>';
       html += '<div class="ci"><div class="cn">'+esc(c.name)+'</div><div class="cd">'+fmtDur(c.dur)+'</div>';
       html += '<div class="cp'+(ph?'':' no')+'">'+(ph?esc(ph):'sem telefone')+'</div></div>';
@@ -484,7 +559,7 @@ function renderReminders(){
       } else {
         html += '<button class="noph" onclick="markSent(\''+escJs(key)+'\')">Sem tel.</button>';
       }
-      html += '<button class="rmbtn" onclick="confirmRemove('+ti+','+ci+')">&#10005;</button>';
+      html += '<button class="rmbtn" onclick="confirmRemove('+team.ti+','+ci+')">&#10005;</button>';
       html += '</div>';
     });
     html += '</div>';
@@ -501,34 +576,24 @@ function smsMessage(day, client, team){
 }
 function markSent(key){
   SENT[key] = !SENT[key];
-  scheduleSave(); /* saves to this device immediately, synchronously */
-  /* Deferred: the SMS row is a real <a href="sms:..."> link, and this handler
-     runs on the same click. Re-rendering rem-wrap synchronously here replaces
-     (destroys) that very <a> element before the browser can act on its href,
-     which silently cancels the handoff to the Messages app. Yielding to the
-     next tick lets the native navigation fire first. */
-  setTimeout(function(){
-    renderReminders();
-  }, 0);
+  scheduleSave();
+  setTimeout(function(){ renderReminders(); }, 0);
 }
 function smsTap(ev, key){
-  /* Belt-and-suspenders for the SMS button: copy the message to the
-     clipboard synchronously (works everywhere, no permissions surprises
-     since it runs inside the tap gesture) so the text is always available
-     to paste even if the phone/browser doesn't hand off to Messages via
-     the sms: link — some browsers or in-app views block or ignore that. */
   var el = ev.currentTarget;
   var msg = el.getAttribute('data-msg') || '';
   copyToClipboard(msg, function(){});
   markSent(key);
 }
+function allClientKeys(d){
+  var keys = [];
+  dayTeams(d).forEach(function(t){ t.list.forEach(function(c){ keys.push(sentKey(DATE_KEY, c.name)); }); });
+  return keys;
+}
 function updateProgress(){
   var d = findDay(DATE_KEY);
-  var bar = document.getElementById('bbar');
   if(!d){ return; }
-  var all = [];
-  var teams = d.is_trio ? [d.t1] : [d.t1, d.t2];
-  teams.forEach(function(list, ti){ list.forEach(function(c, ci){ all.push(sentKey(DATE_KEY, ti, c.name, ci)); }); });
+  var all = allClientKeys(d);
   var sentCount = all.filter(function(k){ return SENT[k]; }).length;
   var prg = document.getElementById('prg');
   var btn = document.getElementById('nbtn');
@@ -540,16 +605,16 @@ function updateProgress(){
 function nextSMS(){
   var d = findDay(DATE_KEY);
   if(!d) return;
-  var teams = d.is_trio ? [{list:d.t1, name:d.team1_name}] : [{list:d.t1, name:d.team1_name}, {list:d.t2, name:d.team2_name}];
+  var teams = dayTeams(d);
   for(var ti=0; ti<teams.length; ti++){
     var list = teams[ti].list;
     for(var ci=0; ci<list.length; ci++){
-      var key = sentKey(DATE_KEY, ti, list[ci].name, ci);
+      var key = sentKey(DATE_KEY, list[ci].name);
       if(!SENT[key]){
         var ph = phoneFor(list[ci].name);
         var msg = smsMessage(d, list[ci], teams[ti]);
         SENT[key] = true;
-        scheduleSave(); /* saves to this device immediately, synchronously */
+        scheduleSave();
         if(ph){
           copyToClipboard(msg, function(){});
           var href = smsHref(ph, msg);
@@ -566,7 +631,7 @@ function nextSMS(){
 }
 function confirmRemove(teamIdx, clientIdx){
   var d = findDay(DATE_KEY);
-  var list = teamIdx===0 ? d.t1 : d.t2;
+  var list = getListForTeam(d, teamIdx);
   var name = list[clientIdx].name;
   openConfirm('Remover "'+name+'" da agenda de '+d.day_name+' '+d.date+'/'+MM+'?', function(){
     list.splice(clientIdx,1);
@@ -582,33 +647,31 @@ function renderWhatsapp(){
   var wrap = document.getElementById('wa-wrap');
   var d = findDay(DATE_KEY);
   if(!d){ wrap.innerHTML = '<div class="empty">&#128172;<br>Select a date first</div>'; return; }
-  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'tr', label:(d.team_label||'TRIO')}]
-                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1'}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2'}];
   var html = '';
-  teams.forEach(function(team, ti){
+  dayTeams(d).forEach(function(team){
     if(!team.list.length) return;
+    var ti = team.ti;
     var msg = waMessage(d, team);
-    var mid = 'wamsg-'+ti;
     html += '<div class="wacard"><div class="wahdr '+team.cls+'">'+team.label+' &middot; '+esc(team.name)+'</div>';
-    html += '<div class="wabody"><div class="wamsg" id="'+mid+'">'+esc(msg)+'</div>';
+    html += '<div class="wabody"><div class="wamsg" id="wamsg-'+ti+'">'+esc(msg)+'</div>';
     html += '<button class="wacopy" id="cp-'+ti+'" onclick="copyMsg('+ti+')">&#128172; Copy Message</button></div></div>';
   });
   wrap.innerHTML = html || '<div class="empty">&#128172;<br>Nenhum cliente neste dia</div>';
 }
 function waTeamLabel(team){
+  var mem = teamMembers(team.name).filter(function(x){ return x!=='?'; });
+  if(mem.length===1) return mem[0];
   if(team.cls==='pk') return 'Team Pink';
   if(team.cls==='bl') return 'Team Blue';
-  if(team.label==='SOLO') return team.name;
-  return 'Team Orange'; // Friday trio
+  return 'Team Orange';
 }
 function waMessage(day, team){
   var lines = ['Hi '+waTeamLabel(team)+', thank you for today. For '+day.day_name+':', ''];
   team.list.forEach(function(c, i){
     lines.push((i+1)+'. '+etaShort(c.eta_ampm)+' — '+c.name+' ('+fmtDur(c.dur)+')');
   });
-  var total = team.list.reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0);
   lines.push('');
-  lines.push('Total: '+fmtDur(total));
+  lines.push('Total: '+fmtDur(teamTotal(team.list)));
   return lines.join('\n');
 }
 function copyMsg(ti){
@@ -637,37 +700,170 @@ function fallbackCopy(text, cb){
 }
 
 /* ---------- schedule tab ---------- */
+var ROLE_OPTS = [['cleaner','Cleaner'],['driverCo','Driver — carro da empresa'],['driverOwn','Driver — carro próprio']];
+function normEta(s){
+  s = String(s||'').trim();
+  if(!s) return '';
+  var m = /^(\d{1,2})(?:[:.h](\d{2}))?\s*(am|pm|a|p)?$/i.exec(s);
+  if(!m) return s;
+  var h = parseInt(m[1],10), mi = m[2] ? parseInt(m[2],10) : 0, ap = m[3] ? m[3].toLowerCase() : '';
+  if(h>24 || mi>59) return s;
+  if(ap){ if(ap.charAt(0)==='p' && h<12) h += 12; if(ap.charAt(0)==='a' && h===12) h = 0; }
+  else if(h>=1 && h<7){ h += 12; }
+  var h12 = h%12; if(h12===0) h12 = 12;
+  return h12+':'+pad2(mi)+' '+(h<12||h===24?'AM':'PM');
+}
+function memberRole(d, name){
+  var ov = POOVR[povKey(dayKey(d), name)] || {};
+  return ov.role || defaultRoleFor(findEmp(name));
+}
 function renderSchedule(){
   var wrap = document.getElementById('sch-wrap');
   var d = findDay(DATE_KEY);
   if(!d){ wrap.innerHTML = '<div class="empty">&#9999;&#65039;<br>Select a date first</div>'; return; }
-  var teams = d.is_trio ? [{name:d.team1_name, list:d.t1, cls:'pk', label:(d.team_label||'TRIO'), ti:0}]
-                         : [{name:d.team1_name, list:d.t1, cls:'pk', label:'TEAM 1', ti:0}, {name:d.team2_name, list:d.t2, cls:'bl', label:'TEAM 2', ti:1}];
-  var html = '<div class="scard"><div class="sbdy op">';
+  var teams = dayTeams(d);
+  var html = '<div class="layoutbar"><span>Formato do dia</span>'+
+    '<button class="lbtn'+(d.is_trio?'':' on')+'" onclick="setLayout(false)">2 equipes</button>'+
+    '<button class="lbtn'+(d.is_trio?' on':'')+'" onclick="setLayout(true)">1 equipe (todos juntos)</button>';
+  if(!d.is_trio){
+    html += d.t3 ? '<button class="lbtn" onclick="removeExtraTeam()">&minus; Equipe 3</button>'
+                 : '<button class="lbtn" onclick="addExtraTeam()">+ Equipe 3</button>';
+  }
+  html += '</div>';
+  html += '<div class="scard"><div class="sbdy op">';
   teams.forEach(function(team){
-    html += '<div class="slbl '+team.cls+'">'+team.label+' &middot; <input class="tname" value="'+esc(team.name)+'" onchange="changeTeamName('+team.ti+',this.value)"></div>';
-    team.list.forEach(function(c, ci){
-      html += '<div class="srow" draggable="true" data-ti="'+team.ti+'" data-ci="'+ci+'" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="dragDrop(event)" ondragend="dragEnd(event)">';
-      html += '<span class="sdh">&#9776;</span>';
-      html += '<span class="scn">'+esc(c.name)+'</span>';
-      html += '<input class="sdur" type="number" step="0.25" min="0" value="'+c.dur+'" onchange="changeDur('+team.ti+','+ci+',this.value)">';
-      html += '<span class="seta">'+esc(etaShort(c.eta_ampm))+'</span>';
-      html += '<button class="srm" onclick="confirmRemove('+team.ti+','+ci+')">&#10005;</button>';
-      html += '</div>';
+    var ti = team.ti;
+    var mem = teamMembers(team.name);
+    html += '<div class="slbl '+team.cls+'">'+team.label+' &middot; '+mem.length+' '+(mem.length===1?'pessoa':'pessoas')+' &middot; total '+fmtDur(teamTotal(team.list))+'</div>';
+    html += '<div class="mems">';
+    mem.forEach(function(m, mi){
+      html += '<div class="mrow"><span class="mn">'+esc(m)+'</span>';
+      if(m!=='?'){
+        var cur = memberRole(d, m);
+        html += '<select class="mrole" onchange="setMemberRole('+ti+','+mi+',this.value)">';
+        ROLE_OPTS.forEach(function(o){ html += '<option value="'+o[0]+'"'+(cur===o[0]?' selected':'')+'>'+o[1]+'</option>'; });
+        html += '</select>';
+      } else { html += '<span class="mhint">vaga em aberto</span>'; }
+      html += '<button class="mx" onclick="removeMember('+ti+','+mi+')" aria-label="Remover">&#10005;</button></div>';
     });
-    html += '<div class="sadd"><input class="saname" id="saname-'+team.ti+'" placeholder="Nome do cliente"><input class="sadur" id="sadur-'+team.ti+'" type="number" step="0.25" value="1.5" placeholder="h"><button class="saddbtn" onclick="addScheduleClient('+team.ti+')">+ Add</button></div>';
-    html += '<button class="recalc" onclick="recalcAndSave('+team.ti+')">&#8635; Recalcular horários</button>';
+    html += '<div class="madrow"><select id="msel-'+ti+'" class="msel"><option value="?">? (vaga em aberto)</option>'+EMP.map(function(e){ return '<option value="'+esc(e.name)+'">'+esc(e.name)+'</option>'; }).join('')+'</select>';
+    html += '<button class="madd" onclick="addMember('+ti+')">+ Pessoa</button></div></div>';
+    team.list.forEach(function(c, ci){
+      html += '<div class="srow2">';
+      html += '<input class="scname" value="'+esc(c.name)+'" onchange="changeClientName('+ti+','+ci+',this.value)" aria-label="Cliente">';
+      html += '<div class="sr2">';
+      html += '<label>h</label><input class="sdur" type="number" inputmode="decimal" step="0.25" min="0" value="'+c.dur+'" onchange="changeDur('+ti+','+ci+',this.value)" aria-label="Duração em horas">';
+      html += '<input class="etain" value="'+esc(c.eta_ampm||'')+'" placeholder="hora" onchange="changeEta('+ti+','+ci+',this.value)" aria-label="Horário">';
+      html += '<button class="smv" onclick="moveOrder('+ti+','+ci+',-1)"'+(ci===0?' disabled':'')+' aria-label="Subir">&#9650;</button>';
+      html += '<button class="smv" onclick="moveOrder('+ti+','+ci+',1)"'+(ci===team.list.length-1?' disabled':'')+' aria-label="Descer">&#9660;</button>';
+      if(teams.length>1) html += '<button class="smv" title="Mover para outra equipe" onclick="moveClient('+ti+','+ci+')">&#8646;</button>';
+      html += '<button class="srm" onclick="confirmRemove('+ti+','+ci+')">&#10005;</button>';
+      html += '</div></div>';
+    });
+    html += '<div class="sadd"><input class="saname" id="saname-'+ti+'" placeholder="Nome do cliente"><input class="sadur" id="sadur-'+ti+'" type="number" step="0.25" value="1.5" placeholder="h"><button class="saddbtn" onclick="addScheduleClient('+ti+')">+ Add</button></div>';
+    html += '<button class="recalc" onclick="recalcAndSave('+ti+')">&#8635; Recalcular horários em sequência (8:00)</button>';
   });
   html += '</div></div>';
   wrap.innerHTML = html;
 }
-function changeTeamName(ti, v){
+function removeMember(ti, mi){
   var d = findDay(DATE_KEY);
-  if(ti===0) d.team1_name = v.trim(); else d.team2_name = v.trim();
-  scheduleSave();
-  showToast('Equipe atualizada.');
+  var arr = teamMembers(getTeamName(d, ti));
+  arr.splice(mi,1);
+  setTeamNameStr(d, ti, arr.join(' / '));
+  renderSchedule(); scheduleSave();
 }
-function getListForTeam(d, ti){ return ti===0 ? d.t1 : d.t2; }
+function addMember(ti){
+  var d = findDay(DATE_KEY);
+  var name = document.getElementById('msel-'+ti).value;
+  var arr = teamMembers(getTeamName(d, ti));
+  if(name!=='?' && arr.indexOf(name)>-1){ showToast(name+' já está nessa equipe.', true); return; }
+  arr.push(name);
+  setTeamNameStr(d, ti, arr.join(' / '));
+  renderSchedule(); scheduleSave();
+  showToast(name==='?' ? 'Vaga em aberto adicionada.' : name+' adicionado(a).');
+}
+function setMemberRole(ti, mi, role){
+  var d = findDay(DATE_KEY);
+  var name = teamMembers(getTeamName(d, ti))[mi];
+  var k = povKey(dayKey(d), name);
+  POOVR[k] = POOVR[k] || {};
+  POOVR[k].role = role;
+  scheduleSave();
+  showToast(name+': '+roleLabel(role)+'.');
+}
+function setLayout(single){
+  var d = findDay(DATE_KEY);
+  if(!d || !!d.is_trio===!!single) return;
+  if(single){
+    var all = teamMembers(d.team1_name);
+    [d.team2_name, d.team3_name].forEach(function(nm){
+      teamMembers(nm).forEach(function(m){ if(m==='?' || all.indexOf(m)<0) all.push(m); });
+    });
+    d.t1 = d.t1.concat(d.t2, d.t3||[]); d.t2 = []; delete d.t3; delete d.team3_name;
+    recalcTeam(d.t1);
+    d.team1_name = all.join(' / '); d.team2_name = '';
+    d.is_trio = true; delete d.team_label;
+    showToast('Agora é 1 equipe com '+all.length+' pessoa'+(all.length===1?'':'s')+'.');
+  } else {
+    var mem = teamMembers(d.team1_name);
+    var half = Math.ceil(mem.length/2);
+    d.team1_name = mem.slice(0, half).join(' / ');
+    d.team2_name = mem.slice(half).join(' / ') || '?';
+    d.is_trio = false; delete d.team_label;
+    showToast('Dividido em 2 equipes. Use ⇆ para mover clientes.');
+  }
+  renderSchedule(); scheduleSave();
+}
+function addExtraTeam(){
+  var d = findDay(DATE_KEY);
+  if(d.is_trio || d.t3) return;
+  d.t3 = []; d.team3_name = '?';
+  renderSchedule(); scheduleSave();
+  showToast('Equipe 3 criada. Adicione as pessoas e os clientes.');
+}
+function removeExtraTeam(){
+  var d = findDay(DATE_KEY);
+  if(!d.t3) return;
+  if(d.t3.length){ showToast('Mova ou remova os clientes da Equipe 3 antes.', true); return; }
+  delete d.t3; delete d.team3_name;
+  renderSchedule(); scheduleSave();
+}
+function moveClient(ti, ci){
+  var d = findDay(DATE_KEY);
+  var teams = dayTeams(d);
+  var pos = 0; teams.forEach(function(t, i){ if(t.ti===ti) pos = i; });
+  var dest = teams[(pos+1)%teams.length].ti;
+  var from = getListForTeam(d, ti), to = getListForTeam(d, dest);
+  var item = from.splice(ci,1)[0];
+  to.push(item);
+  recalcTeam(from); recalcTeam(to);
+  renderSchedule(); scheduleSave();
+  showToast(item.name+' movido(a) para a equipe '+(dest+1)+'.');
+}
+function moveOrder(ti, ci, dir){
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, ti);
+  var j = ci+dir;
+  if(j<0 || j>=list.length) return;
+  var tmp = list[ci]; list[ci] = list[j]; list[j] = tmp;
+  recalcTeam(list);
+  renderSchedule(); scheduleSave();
+}
+function changeClientName(ti, ci, val){
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, ti);
+  var v = String(val||'').trim();
+  if(!v){ renderSchedule(); return; }
+  list[ci].name = v;
+  scheduleSave();
+}
+function changeEta(ti, ci, val){
+  var d = findDay(DATE_KEY);
+  var list = getListForTeam(d, ti);
+  list[ci].eta_ampm = normEta(val);
+  renderSchedule(); scheduleSave();
+}
 function changeDur(ti, ci, val){
   var d = findDay(DATE_KEY);
   var list = getListForTeam(d, ti);
@@ -678,10 +874,8 @@ function changeDur(ti, ci, val){
 }
 function recalcAndSave(ti){
   var d = findDay(DATE_KEY);
-  var list = getListForTeam(d, ti);
-  recalcTeam(list);
+  recalcTeam(getListForTeam(d, ti));
   renderSchedule();
-  renderReminders();
   scheduleSave();
   showToast('Horários recalculados.');
 }
@@ -693,38 +887,20 @@ function addScheduleClient(ti){
   if(!name){ showToast('Digite o nome do cliente.', true); return; }
   var dur = parseFloat(durEl.value)||1;
   var list = getListForTeam(d, ti);
-  list.push({name:name, dur:dur, fill:'none', eta_ampm:''});
-  recalcTeam(list);
-  nameEl.value=''; durEl.value='1.5';
+  var eta = '';
+  if(list.length){
+    var last = list[list.length-1];
+    var m = /^(\d{1,2}):(\d{2}) (AM|PM)$/.exec(last.eta_ampm||'');
+    if(m){
+      var h = parseInt(m[1],10)%12 + (m[3]==='PM'?12:0);
+      eta = decToClock(h + parseInt(m[2],10)/60 + (parseFloat(last.dur)||0));
+    }
+  } else { eta = '8:00 AM'; }
+  list.push({name:name, dur:dur, fill:'none', eta_ampm:eta});
   renderSchedule();
   scheduleSave();
   showToast(name+' adicionado(a) à agenda.');
 }
-/* drag reorder — schedule tab */
-var DRAG_FROM = null;
-function dragStart(e){
-  var row = e.currentTarget;
-  DRAG_FROM = {ti: parseInt(row.dataset.ti), ci: parseInt(row.dataset.ci)};
-  row.classList.add('dragging');
-  e.dataTransfer.effectAllowed = 'move';
-}
-function dragOver(e){ e.preventDefault(); }
-function dragDrop(e){
-  e.preventDefault();
-  var row = e.currentTarget;
-  var to = {ti: parseInt(row.dataset.ti), ci: parseInt(row.dataset.ci)};
-  if(!DRAG_FROM || DRAG_FROM.ti !== to.ti || DRAG_FROM.ci === to.ci){ DRAG_FROM=null; return; }
-  var d = findDay(DATE_KEY);
-  var list = getListForTeam(d, to.ti);
-  var item = list.splice(DRAG_FROM.ci, 1)[0];
-  list.splice(to.ci, 0, item);
-  recalcTeam(list);
-  DRAG_FROM = null;
-  renderSchedule();
-  renderReminders();
-  scheduleSave();
-}
-function dragEnd(e){ e.currentTarget.classList.remove('dragging'); }
 
 /* ---------- pending tab ---------- */
 function renderPending(){
@@ -758,8 +934,7 @@ function openSchedulePicker(pendingIdx){
   function fillTeams(){
     var d = findDay(dsel.value);
     var tsel = document.getElementById('sched-team');
-    if(d.is_trio){ tsel.innerHTML = '<option value="0">TRIO — '+esc(d.team1_name)+'</option>'; }
-    else { tsel.innerHTML = '<option value="0">TEAM 1 — '+esc(d.team1_name)+'</option><option value="1">TEAM 2 — '+esc(d.team2_name)+'</option>'; }
+    tsel.innerHTML = dayTeams(d).map(function(t){ return '<option value="'+t.ti+'">'+t.label+' — '+esc(t.name)+'</option>'; }).join('');
   }
   dsel.onchange = fillTeams;
   fillTeams();
@@ -899,6 +1074,7 @@ function findEmp(name){
 function dayRoster(d){
   var hoursBy = {}, order = [];
   function add(teamName, list){
+    if(!(list||[]).length) return;
     var h = (list||[]).reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0);
     empNamesForTeam(teamName).forEach(function(n){
       if(!(n in hoursBy)){ hoursBy[n]=0; order.push(n); }
@@ -906,7 +1082,7 @@ function dayRoster(d){
     });
   }
   add(d.team1_name, d.t1);
-  if(!d.is_trio) add(d.team2_name, d.t2);
+  if(!d.is_trio){ add(d.team2_name, d.t2); if(d.t3) add(d.team3_name, d.t3); }
   return order.map(function(n){ return {name:n, hours:hoursBy[n]}; });
 }
 function defaultRoleFor(emp){
