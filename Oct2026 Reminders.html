@@ -690,11 +690,19 @@ function waTeamLabel(team){
   if(team.cls==='bl') return 'Team Blue';
   return 'Team Orange';
 }
+function waEmoji(team){
+  if(team.cls==='pk') return '\uD83C\uDF38';
+  if(team.cls==='bl') return '\uD83D\uDC99';
+  return '\uD83E\uDDE1';
+}
 function waMessage(day, team){
-  var lines = ['Hi '+waTeamLabel(team)+', thank you for today. For '+day.day_name+':', ''];
+  var mem = teamMembers(team.name).filter(function(x){ return x!=='?' && x.trim()!==''; });
+  var lines = ['Hi '+waEmoji(team)+' '+waTeamLabel(team)+', thank you for today. For '+day.day_name+':'];
+  if(mem.length) lines.push(mem.map(function(m){ return '@'+m.trim(); }).join(' '));
+  lines.push('');
   team.list.forEach(function(c, i){
-    if(c.lunch) lines.push('   (lunch break '+LUNCH_MIN+' min)');
-    lines.push((i+1)+'. '+etaShort(c.eta_ampm)+' — '+c.name+' ('+fmtDur(c.dur)+')');
+    if(c.lunch) lines.push('   \uD83C\uDF74 (lunch break '+LUNCH_MIN+' min)');
+    lines.push((i+1)+'. '+etaShort(c.eta_ampm)+' \u2014 '+c.name+' ('+fmtDur(c.dur)+')');
   });
   lines.push('');
   lines.push('Total: '+fmtDur(teamTotal(team.list)));
