@@ -243,7 +243,7 @@ body{font-family:"Nunito Sans",sans-serif;background:var(--bg);color:var(--ink);
   <div class="mdtitle" id="sched-title">Agendar</div>
   <label>Dia</label><select id="sched-date"></select>
   <label>Equipe</label><select id="sched-team"></select>
-  <label>Dura&ccedil;&atilde;o (horas)</label><input id="sched-dur" type="number" step="0.25" min="0" value="1.5">
+  <label>Dura&ccedil;&atilde;o para uma dupla (horas)</label><input id="sched-dur" type="number" step="0.25" min="0" value="1.5">
   <div class="mdbtns"><button class="mdcan" onclick="closeSchedMod()">Cancel</button><button class="mdsave" onclick="saveSchedulePick()">Agendar</button></div>
 </div></div>
 <div class="mo" id="emp-mo"><div class="md">
@@ -557,6 +557,19 @@ function getTeamName(d, ti){ return ti===0 ? d.team1_name : (ti===1 ? d.team2_na
 function setTeamNameStr(d, ti, v){
   if(ti===0) d.team1_name = v; else if(ti===1) d.team2_name = v; else d.team3_name = v;
 }
+/* Person-hours logic: each client keeps "mh" = hours x people. When the number of
+   people on a team changes, dur = mh / newSize (rounded to 5 min). */
+function teamSizeOf(str){ return Math.max(1, teamMembers(str).length); }
+function round5(h){ return Math.max(5/60, Math.round(h*12)/12); }
+function rescaleList(list, oldSize, newSize){
+  if(!list || oldSize===newSize) return;
+  list.forEach(function(c){
+    var mh = c.mh>0 ? c.mh : (parseFloat(c.dur)||0)*oldSize;
+    c.mh = mh;
+    c.dur = round5(mh/newSize);
+  });
+  recalcTeam(list);
+}
 function teamTotal(list){ return (list||[]).reduce(function(s,c){ return s+(parseFloat(c.dur)||0); }, 0); }
 
 /* ---------- reminders tab ---------- */
@@ -812,19 +825,24 @@ function recalcDay(){
 function removeMember(ti, mi){
   var d = findDay(DATE_KEY);
   var arr = teamMembers(getTeamName(d, ti));
+  var oldN = Math.max(1, arr.length);
   arr.splice(mi,1);
   setTeamNameStr(d, ti, arr.join(' / '));
+  rescaleList(getListForTeam(d, ti), oldN, Math.max(1, arr.length));
   renderSchedule(); scheduleSave();
+  if(oldN!==Math.max(1, arr.length)) showToast('Equipe com '+Math.max(1, arr.length)+': tempos recalculados.');
 }
 function addMember(ti){
   var d = findDay(DATE_KEY);
   var name = document.getElementById('msel-'+ti).value;
   var arr = teamMembers(getTeamName(d, ti));
   if(name!=='?' && arr.indexOf(name)>-1){ showToast(name+' já está nessa equipe.', true); return; }
+  var oldN = Math.max(1, arr.length);
   arr.push(name);
   setTeamNameStr(d, ti, arr.join(' / '));
+  rescaleList(getListForTeam(d, ti), oldN, arr.length);
   renderSchedule(); scheduleSave();
-  showToast(name==='?' ? 'Vaga em aberto adicionada.' : name+' adicionado(a).');
+  showToast((name==='?' ? 'Vaga em aberto adicionada' : name+' adicionado(a)')+'. Equipe com '+arr.length+': tempos recalculados.');
 }
 function setMemberRole(ti, mi, role){
   var d = findDay(DATE_KEY);
@@ -840,9 +858,12 @@ function setLayout(single){
   if(!d || !!d.is_trio===!!single) return;
   if(single){
     var all = teamMembers(d.team1_name);
+    var sz1 = teamSizeOf(d.team1_name), sz2 = teamSizeOf(d.team2_name), sz3 = d.t3 ? teamSizeOf(d.team3_name) : 1;
     [d.team2_name, d.team3_name].forEach(function(nm){
       teamMembers(nm).forEach(function(m){ if(m==='?' || all.indexOf(m)<0) all.push(m); });
     });
+    var tot = Math.max(1, all.length);
+    rescaleList(d.t1, sz1, tot); rescaleList(d.t2, sz2, tot); if(d.t3) rescaleList(d.t3, sz3, tot);
     d.t1 = d.t1.concat(d.t2, d.t3||[]); d.t2 = []; delete d.t3; delete d.team3_name;
     recalcTeam(d.t1);
     d.team1_name = all.join(' / '); d.team2_name = '';
@@ -851,8 +872,10 @@ function setLayout(single){
   } else {
     var mem = teamMembers(d.team1_name);
     var half = Math.ceil(mem.length/2);
+    var oldTot = Math.max(1, mem.length);
     d.team1_name = mem.slice(0, half).join(' / ');
     d.team2_name = mem.slice(half).join(' / ') || '?';
+    rescaleList(d.t1, oldTot, teamSizeOf(d.team1_name));
     d.is_trio = false; delete d.team_label;
     showToast('Dividido em 2 equipes. Use ⇆ para mover clientes.');
   }
@@ -879,6 +902,8 @@ function moveClient(ti, ci){
   var dest = teams[(pos+1)%teams.length].ti;
   var from = getListForTeam(d, ti), to = getListForTeam(d, dest);
   var item = from.splice(ci,1)[0];
+  var szFrom = teamSizeOf(getTeamName(d, ti)), szTo = teamSizeOf(getTeamName(d, dest));
+  rescaleList([item], szFrom, szTo);
   to.push(item);
   recalcTeam(from); recalcTeam(to);
   renderSchedule(); scheduleSave();
@@ -911,6 +936,7 @@ function changeDur(ti, ci, val){
   var d = findDay(DATE_KEY);
   var list = getListForTeam(d, ti);
   list[ci].dur = parseFloat(val)||0;
+  list[ci].mh = list[ci].dur * teamSizeOf(getTeamName(d, ti));
   recalcTeam(list);
   renderSchedule();
   scheduleSave();
@@ -930,7 +956,7 @@ function addScheduleClient(ti){
   if(!name){ showToast('Digite o nome do cliente.', true); return; }
   var dur = parseFloat(durEl.value)||1;
   var list = getListForTeam(d, ti);
-  list.push({name:name, dur:dur, fill:'none', eta_ampm:''});
+  list.push({name:name, dur:dur, mh:dur*teamSizeOf(getTeamName(d, ti)), fill:'none', eta_ampm:''});
   var tm = computeTimes(list);
   list[list.length-1].eta_ampm = decToClock(tm.starts[list.length-1]);
   renderSchedule();
@@ -988,7 +1014,8 @@ function saveSchedulePick(){
   var dur = parseFloat(document.getElementById('sched-dur').value)||1;
   var d = findDay(dkey);
   var list = getListForTeam(d, ti);
-  list.push({name:p.name, dur:dur, fill:'none', eta_ampm:''});
+  var szT = teamSizeOf(getTeamName(d, ti));
+  list.push({name:p.name, dur:round5(dur*2/szT), mh:dur*2, fill:'none', eta_ampm:''});
   recalcTeam(list);
   PENDING.splice(pendingIdx,1);
   closeSchedMod();
